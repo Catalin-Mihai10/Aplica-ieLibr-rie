@@ -9,10 +9,9 @@ public class Main extends Application {
     private Stage primaryStage;
     private AnchorPane paginaA;
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("AplicatieLibrarie");
-
         PaginaAutentificare();
     }
 
