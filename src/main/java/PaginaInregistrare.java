@@ -30,7 +30,7 @@ public class PaginaInregistrare {
     private PasswordField parola;
 
     private File fis = new File("src/main/resources/user.json");
-    private static ArrayList<Client> clienti;
+    protected static ArrayList<Client> clienti;
     private JSONArray lista = new JSONArray();
     private Client c;
 
@@ -80,5 +80,9 @@ public class PaginaInregistrare {
         } catch (IOException e) {
             throw new NuSaScrisUtil();
         }
+    }
+
+    public ArrayList<Client> getListaClienti(){
+        return clienti;
     }
 }

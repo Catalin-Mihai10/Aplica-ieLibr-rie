@@ -7,16 +7,20 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
 
-public class PaginaLogIn extends PaginaInregistrare{
+public class PaginaAutentificareManager {
 
     @FXML
     private TextField username;
     @FXML
     private PasswordField parola;
-
 
     public void back(ActionEvent actionEvent) {
         try {
@@ -28,19 +32,18 @@ public class PaginaLogIn extends PaginaInregistrare{
             //stage.setTitle("My New Stage Title");
             stage.setScene(scene);
             stage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
             // Hide this current window (if this is what you want
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public void redirectionare(ActionEvent actionEvent) {
         try {
-            if(verificareUtilizator()==1) {
+            if(verificareManager()==1) {
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(Main.class.getResource("PaginaClient.fxml"));
+                loader.setLocation(Main.class.getResource("PaginaManager.fxml"));
                 AnchorPane paginaA = (AnchorPane) loader.load();
                 Scene scene = new Scene(paginaA);
                 Stage stage = new Stage();
@@ -54,11 +57,19 @@ public class PaginaLogIn extends PaginaInregistrare{
         }
     }
 
-    public int  verificareUtilizator() {
-        for (int i = 0; i < getListaClienti().size(); i++) {
-            if (getListaClienti().get(i).getUsername().equals(username.getText()) && getListaClienti().get(i).getPassword().equals(parola.getText())) {
+    public int verificareManager() {
+        JSONParser parser = new JSONParser();
+        try (Reader reader = new FileReader("src/main/resources/manager.json")) {
+
+            JSONObject obiect = (JSONObject) parser.parse(reader);
+            if (obiect.get("Username:").equals(username.getText()) && obiect.get("Parola:").equals(parola.getText())) {
                 return 1;
             }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
         return 0;
     }

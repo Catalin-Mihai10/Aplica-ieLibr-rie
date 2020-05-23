@@ -44,4 +44,22 @@ public class PaginaAutentificare {
             e.printStackTrace();
         }
     }
+
+    public void handle2(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("PaginaAutentificareManager.fxml"));
+            AnchorPane paginaI = (AnchorPane) loader.load();
+            Scene scene = new Scene(paginaI);
+            Stage stage = new Stage();
+            //stage.setTitle("My New Stage Title");
+            stage.setScene(scene);
+            stage.show();
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            // Hide this current window (if this is what you want
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

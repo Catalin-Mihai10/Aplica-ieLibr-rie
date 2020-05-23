@@ -1,15 +1,15 @@
 package Utilizatori;
 
-public class Client {
+public class Manager {
 
     private String username;
     private String password;
 
-    public Client() {
+    public Manager() {
 
     }
 
-    public Client(String username, String password) {
+    public Manager(String username, String password) {
         this.username = username;
         this.password = password;
     }
@@ -17,15 +17,9 @@ public class Client {
     public String getUsername() {
         return username;
     }
-    public void setUsername(String username) {
-        this.username = username;
-    }
+
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     @Override
@@ -37,7 +31,7 @@ public class Client {
 
     @Override
     public String toString() {
-        return "ClientDTO{" +
+        return "Manager{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
