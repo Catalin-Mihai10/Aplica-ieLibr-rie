@@ -1,3 +1,4 @@
+import Exceptii.UsernameSauParolaGresite;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,8 +8,15 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
+import java.util.Iterator;
 
 public class PaginaLogIn extends PaginaInregistrare{
 
@@ -36,7 +44,7 @@ public class PaginaLogIn extends PaginaInregistrare{
         }
     }
 
-    public void redirectionare(ActionEvent actionEvent) {
+    public void redirectionare(ActionEvent actionEvent) throws UsernameSauParolaGresite {
         try {
             if(verificareUtilizator()==1) {
                 FXMLLoader loader = new FXMLLoader();
@@ -48,6 +56,9 @@ public class PaginaLogIn extends PaginaInregistrare{
                 stage.show();
                 ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
             }
+            else {
+                throw new UsernameSauParolaGresite();
+            }
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -55,6 +66,20 @@ public class PaginaLogIn extends PaginaInregistrare{
     }
 
     public int  verificareUtilizator() {
+        JSONParser parser = new JSONParser();
+        try (Reader reader = new FileReader("src/main/resources/user.json")) {
+
+            JSONArray temp = (JSONArray) parser.parse(reader);
+            Iterator<JSONObject> it = temp.iterator();
+            while (it.hasNext()) {
+                JSONObject obiect = it.next();
+                if(obiect.get("Username:").equals(username.getText()) && obiect.get("Parola:").equals(parola.getText())) return 1;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         return 0;
     }
 }
