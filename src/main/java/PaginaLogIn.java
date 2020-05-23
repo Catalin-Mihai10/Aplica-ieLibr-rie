@@ -55,11 +55,6 @@ public class PaginaLogIn extends PaginaInregistrare{
     }
 
     public int  verificareUtilizator() {
-        for (int i = 0; i < getListaClienti().size(); i++) {
-            if (getListaClienti().get(i).getUsername().equals(username.getText()) && getListaClienti().get(i).getPassword().equals(parola.getText())) {
-                return 1;
-            }
-        }
         return 0;
     }
 }

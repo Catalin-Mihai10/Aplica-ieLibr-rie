@@ -13,12 +13,11 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Objects;
+import java.io.*;
+import java.util.Iterator;
 
 public class PaginaInregistrare {
 
@@ -30,7 +29,6 @@ public class PaginaInregistrare {
     private PasswordField parola;
 
     private File fis = new File("src/main/resources/user.json");
-    protected static ArrayList<Client> clienti;
     private JSONArray lista = new JSONArray();
     private Client c;
 
@@ -51,38 +49,65 @@ public class PaginaInregistrare {
         }
     }
 
-    public static void adaugaUtilizator(Client c) throws UtilizatorulExistaDeja {
-        NuExistaUtilizator(c.getUsername());
-        clienti.add(c);
+
+    private static int ExistaUtilizator(String username) throws UtilizatorulExistaDeja{
+        JSONParser parser = new JSONParser();
+        try (Reader reader = new FileReader("src/main/resources/user.json")) {
+
+            JSONArray temp = (JSONArray) parser.parse(reader);
+            Iterator<JSONObject> it = temp.iterator();
+            while (it.hasNext()) {
+                JSONObject obj = it.next();
+                if(obj.get("Username:").equals(username)) return 1;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
-    private static void NuExistaUtilizator(String username) throws UtilizatorulExistaDeja{
-        for (Client client : clienti) {
-            if (Objects.equals(username, client.getUsername()))
-                throw new UtilizatorulExistaDeja(username);
+    private void CitesteFisier(){
+        JSONParser parser = new JSONParser();
+        try (Reader reader = new FileReader("src/main/resources/user.json")) {
+
+            JSONArray temp = (JSONArray) parser.parse(reader);
+            Iterator<JSONObject> it = temp.iterator();
+            while (it.hasNext()) {
+                JSONObject obj = it.next();
+                obj.get("Username:");
+                obj.get("Parola:");
+                lista.add(obj);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
     }
 
     //Suprascrie date de fiecare data cand reporim si inregistram
     public void Inregistrare(ActionEvent actionEvent) throws UtilizatorulExistaDeja{
         c = new Client(username.getText(),parola.getText());
-        clienti.add(c);
-        //adaugaUtilizator(c);
+        CitesteFisier();
 
-        JSONObject obiect = new JSONObject();
-        obiect.put("Username:",c.getUsername());
-        obiect.put("Parola:",c.getPassword());
+        if(ExistaUtilizator(c.getUsername()) == 1) {
+            throw new UtilizatorulExistaDeja("Utilizator deja exista!");
+        }else {
+            JSONObject obiect = new JSONObject();
+            obiect.put("Username:", c.getUsername());
+            obiect.put("Parola:", c.getPassword());
 
-        try (FileWriter fisier = new FileWriter(fis,true)){
-            lista.add(obiect);
-            fisier.write(obiect.toJSONString());
-            fisier.flush();
-        } catch (IOException e) {
-            throw new NuSaScrisUtil();
+            try (FileWriter fisier = new FileWriter(fis)) {
+                lista.add(obiect);
+                fisier.write(lista.toJSONString());
+                fisier.flush();
+                registrationMessage.setText("Contul a fost creat cu succes!");
+            } catch (IOException e) {
+                throw new NuSaScrisUtil();
+            }
         }
     }
 
-    public ArrayList<Client> getListaClienti(){
-        return clienti;
-    }
 }
