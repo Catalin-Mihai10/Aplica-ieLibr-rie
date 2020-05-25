@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import org.json.JSONException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -13,7 +14,11 @@ import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
+
 
 public class PaginaClient {
 
@@ -104,4 +109,45 @@ public class PaginaClient {
             e.printStackTrace();
         }
     }
+
+
+    public void afisarePopulare(ActionEvent actionEvent) throws JSONException{
+        lista.getItems().clear();
+        ArrayList<JSONObject> list = new ArrayList<>();
+        JSONParser parser = new JSONParser();
+        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+
+            JSONArray temp = (JSONArray) parser.parse(reader);
+            Iterator<JSONObject> it = temp.iterator();
+            while (it.hasNext()) {
+                JSONObject obiect = it.next();
+                list.add(obiect);
+            }
+            Collections.sort(list, new Comparator<JSONObject>() {
+                private static final String cheie = "Rang:";
+
+                @Override
+                public int compare(JSONObject a, JSONObject b) {
+                    Long valA;
+                    Long valB = null;
+                    valA = (Long) a.get(cheie);
+                    valB = (Long) b.get(cheie);
+
+                    return -valA.compareTo(valB);
+                }
+            });
+            Iterator<JSONObject> li = list.iterator();
+            while(li.hasNext()){
+                JSONObject sortat = li.next();
+                observ.add(sortat.get("Titlu:").toString());
+            }
+            lista.setItems(observ);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
+
