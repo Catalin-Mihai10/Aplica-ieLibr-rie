@@ -15,8 +15,8 @@
         </AnchorPane>
         <AnchorPane layoutX="117.0" prefHeight="400.0" prefWidth="484.0" style="-fx-background-color: #D70E0E;">
             <children>
-                <ListView fx:id="lista" layoutX="8.0" layoutY="7.0" prefHeight="386.0" prefWidth="232.0" />
-                <TextArea layoutX="242.0" layoutY="7.0" prefHeight="386.0" prefWidth="232.0" />
+                <ListView fx:id="lista" layoutX="8.0" layoutY="7.0" onMouseClicked="#afisareDetalii" prefHeight="386.0" prefWidth="232.0" />
+                <TextArea fx:id="text" editable="false" layoutX="242.0" layoutY="7.0" prefHeight="386.0" prefWidth="232.0" />
             </children>
         </AnchorPane>
     </children>
