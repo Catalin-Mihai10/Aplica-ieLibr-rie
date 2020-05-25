@@ -1,32 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3df95582-8d3d-4951-bda2-046c202defa3" name="Default Changelist" comment="&quot;Commit initial&quot;">
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+    <list default="true" id="3df95582-8d3d-4951-bda2-046c202defa3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/PaginaAutentificare.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/PaginaInregistrare.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/PaginaLogIn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/PaginaAutentificare.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/PaginaAutentificare.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/PaginaInregistrare.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/PaginaInregistrare.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/PaginaLogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/PaginaLogIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PaginaAutentificare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PaginaAutentificare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PaginaAutentificareManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PaginaAutentificareManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PaginaClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PaginaClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PaginaInregistrare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PaginaInregistrare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PaginaLogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PaginaLogIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PaginaManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PaginaManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PaginaAutentificare.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PaginaAutentificare.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PaginaAutentificareManager.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PaginaAutentificareManager.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PaginaInregistrare.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PaginaInregistrare.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PaginaLogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PaginaLogIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PaginaManager.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PaginaManager.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/user.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/user.json" afterDir="false" />
     </list>
+    <list id="b9b2fb94-2cf2-487b-afc8-2809a439e5a6" name="&quot;modificari&quot;" comment="" />
+    <list id="ac564f96-d212-460b-8927-679a17557e4b" name="Revert &quot;&quot;Adaugare pagina principala.&quot;&quot;" comment="Revert &quot;&quot;Adaugare pagina principala.&quot;&quot;&#10;&#10;This reverts commit 89bc6fb5" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,10 +51,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
+        <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/AP-1" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IgnoredFileRootStore">
@@ -68,12 +82,41 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\AplicatieLibrarie\src\main\java\Controllers" />
+      <recent name="D:\AplicatieLibrarie\src\main\java" />
+      <recent name="D:\AplicatieLibrarie\src\main" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\AplicatieLibrarie\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="AplicatieLibrarie.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -86,11 +129,49 @@
       <option name="presentableId" value="Default" />
       <updated>1587736564333</updated>
     </task>
+    <task id="LOCAL-00001" summary="&quot;Adaugare Functionalitate butoane&quot;">
+      <created>1589550678060</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589550678060</updated>
+    </task>
+    <task id="LOCAL-00002" summary="&quot;Alt commit&quot;">
+      <created>1589550970626</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1589550970626</updated>
+    </task>
+    <task id="LOCAL-00003" summary="&quot;Fisier json adaugat&quot;">
+      <created>1590072075230</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1590072075230</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;Commit initial&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Commit initial&quot;" />
+    <MESSAGE value="&quot;Adaugare Functionalitate butoane&quot;" />
+    <MESSAGE value="&quot;Alt commit&quot;" />
+    <MESSAGE value="&quot;Fisier json adaugat&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Fisier json adaugat&quot;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -98,17 +179,85 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="23" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1587736644605" />
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1587737107405">
+    <state x="416" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589891892503">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1587737107405" />
+    <state x="416" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1589891892503" />
+    <state x="488" y="74" key="#com.intellij.ide.util.MemberChooser" timestamp="1589635497442">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="74" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1589635497442" />
+    <state x="479" y="224" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589898762757">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="479" y="224" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1589898762757" />
+    <state x="413" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590060952458">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1590060952458" />
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1590072073604">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1590072073604" />
     <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1587737864401">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587737864401" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1587738031788">
+    <state width="1323" height="185" key="GridCell.Tab.0.bottom" timestamp="1590399600950">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1587738031788" />
+    <state width="1323" height="185" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590399600950" />
+    <state width="1493" height="155" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590245087023" />
+    <state width="1323" height="185" key="GridCell.Tab.0.center" timestamp="1590399600949">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="185" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590399600949" />
+    <state width="1493" height="155" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590245087023" />
+    <state width="1323" height="185" key="GridCell.Tab.0.left" timestamp="1590399600949">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="185" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590399600949" />
+    <state width="1493" height="155" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590245087023" />
+    <state width="1323" height="185" key="GridCell.Tab.0.right" timestamp="1590399600949">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="185" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590399600949" />
+    <state width="1493" height="155" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590245087023" />
+    <state width="1367" height="231" key="GridCell.Tab.1.bottom" timestamp="1590398650920">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="231" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590398650920" />
+    <state width="1367" height="231" key="GridCell.Tab.1.center" timestamp="1590398650919">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="231" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1590398650919" />
+    <state width="1367" height="231" key="GridCell.Tab.1.left" timestamp="1590398650919">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="231" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1590398650919" />
+    <state width="1367" height="231" key="GridCell.Tab.1.right" timestamp="1590398650920">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="231" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1590398650920" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1589897216267">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1589897216267" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1590072096876">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1590072096876" />
+    <state x="484" y="156" key="git4idea.merge.GitMergeDialog" timestamp="1589539362830">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="484" y="156" key="git4idea.merge.GitMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1589539362830" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1590068957159">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1590068957159" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1590064923999">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1590064923999" />
   </component>
 </project>
