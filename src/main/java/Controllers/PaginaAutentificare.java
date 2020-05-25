@@ -1,3 +1,5 @@
+package Controllers;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -6,21 +8,18 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
-public class PaginaAutentificare {
+public class PaginaAutentificare{
 
     public void handle(ActionEvent actionEvent) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("PaginaLogIn.fxml"));
+            loader.setLocation(getClass().getClassLoader().getResource("PaginaLogIn.fxml"));
             AnchorPane paginaL = (AnchorPane) loader.load();
             Scene scene = new Scene(paginaL);
             Stage stage = new Stage();
-            //stage.setTitle("My New Stage Title");
             stage.setScene(scene);
             stage.show();
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            // Hide this current window (if this is what you want
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -30,15 +29,13 @@ public class PaginaAutentificare {
     public void handle1(ActionEvent actionEvent) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("PaginaInregistrare.fxml"));
+            loader.setLocation(getClass().getClassLoader().getResource("PaginaInregistrare.fxml"));
             AnchorPane paginaI = (AnchorPane) loader.load();
             Scene scene = new Scene(paginaI);
             Stage stage = new Stage();
-            //stage.setTitle("My New Stage Title");
             stage.setScene(scene);
             stage.show();
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            // Hide this current window (if this is what you want
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -48,15 +45,13 @@ public class PaginaAutentificare {
     public void handle2(ActionEvent actionEvent) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("PaginaAutentificareManager.fxml"));
+            loader.setLocation(getClass().getClassLoader().getResource("PaginaAutentificareManager.fxml"));
             AnchorPane paginaI = (AnchorPane) loader.load();
             Scene scene = new Scene(paginaI);
             Stage stage = new Stage();
-            //stage.setTitle("My New Stage Title");
             stage.setScene(scene);
             stage.show();
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            // Hide this current window (if this is what you want
         }
         catch (IOException e) {
             e.printStackTrace();

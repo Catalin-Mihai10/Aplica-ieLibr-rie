@@ -8,6 +8,7 @@ import java.io.IOException;
 public class Main extends Application {
     private Stage primaryStage;
     private AnchorPane paginaA;
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
@@ -17,12 +18,10 @@ public class Main extends Application {
 
     public void PaginaAutentificare() {
         try {
-            // Load person overview.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("PaginaAutentificare.fxml"));
+            loader.setLocation(getClass().getClassLoader().getResource("PaginaAutentificare.fxml"));
             AnchorPane paginaA = (AnchorPane) loader.load();
 
-            // Set person overview into the center of root layout.
             Scene scene = new Scene(paginaA);
             primaryStage.setScene(scene);
             primaryStage.show();
