@@ -129,7 +129,8 @@ public class PaginaManager {
                 JSONObject obiect = it.next();
                 if(obiect.get("Titlu:").toString().equals(lista.getSelectionModel().getSelectedItem())){
                     det = "Titlu: "+obiect.get("Titlu:")+"\nAutor: "+obiect.get("Autor:")+"\nEditura: "
-                            +obiect.get("Editura:")+"\nPret: "+obiect.get("Pret:")+" lei";
+                            +obiect.get("Editura:")+"\nPret: "+obiect.get("Pret:")+" lei"+"\nStoc: "
+                            +obiect.get("Stoc:")+" bucati";
                 }
             }
             text.setText(det);
