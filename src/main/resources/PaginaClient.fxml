@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PaginaClient">
+    <children>
+        <AnchorPane prefHeight="400.0" prefWidth="121.0" style="-fx-background-color: #21D70E;">
+            <children>
+                <Button layoutY="81.0" mnemonicParsing="false" onAction="#afisareDrama" prefHeight="40.0" prefWidth="122.0" text="Drama" />
+                <Button layoutY="41.0" mnemonicParsing="false" onAction="#afisareActiune" prefHeight="40.0" prefWidth="122.0" text="Actiune" />
+                <Button layoutY="121.0" mnemonicParsing="false" onAction="#afisareSF" prefHeight="40.0" prefWidth="122.0" text="SF" />
+                <Button layoutY="161.0" mnemonicParsing="false" onAction="#afisareHorror" prefHeight="40.0" prefWidth="122.0" text="Horror" />
+                <Button layoutY="201.0" mnemonicParsing="false" onAction="#afisarePopulare" prefHeight="40.0" prefWidth="122.0" text="UwO" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="117.0" prefHeight="400.0" prefWidth="484.0" style="-fx-background-color: #D70E0E;">
+            <children>
+                <ListView fx:id="lista" layoutX="8.0" layoutY="7.0" onMouseClicked="#afisareDetalii" prefHeight="386.0" prefWidth="232.0" />
+                <TextArea fx:id="text" editable="false" layoutX="242.0" layoutY="7.0" prefHeight="386.0" prefWidth="232.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
