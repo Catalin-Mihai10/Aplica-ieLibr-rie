@@ -11,10 +11,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/PaginaClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PaginaClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/PaginaClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PaginaClient.fxml" afterDir="false" />
     </list>
+    <list id="b9b2fb94-2cf2-487b-afc8-2809a439e5a6" name="&quot;modificari&quot;" comment="" />
+    <list id="ac564f96-d212-460b-8927-679a17557e4b" name="Revert &quot;&quot;Adaugare pagina principala.&quot;&quot;" comment="Revert &quot;&quot;Adaugare pagina principala.&quot;&quot;&#10;&#10;This reverts commit 89bc6fb5" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,15 +33,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/AP-2" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -184,45 +185,45 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587737864401" />
-    <state width="1537" height="155" key="GridCell.Tab.0.bottom" timestamp="1590416712566">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1350" height="182" key="GridCell.Tab.0.bottom" timestamp="1590485852258">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1350" height="182" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590410708433" />
+    <state width="1350" height="182" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590485852258" />
     <state width="1537" height="155" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590416712566" />
-    <state width="1537" height="155" key="GridCell.Tab.0.center" timestamp="1590416712566">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1350" height="182" key="GridCell.Tab.0.center" timestamp="1590485852257">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1350" height="182" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590410708432" />
+    <state width="1350" height="182" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590485852257" />
     <state width="1537" height="155" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590416712566" />
-    <state width="1537" height="155" key="GridCell.Tab.0.left" timestamp="1590416712566">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1350" height="182" key="GridCell.Tab.0.left" timestamp="1590485852257">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1350" height="182" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590410708432" />
+    <state width="1350" height="182" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590485852257" />
     <state width="1537" height="155" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590416712566" />
-    <state width="1537" height="155" key="GridCell.Tab.0.right" timestamp="1590416712566">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1350" height="182" key="GridCell.Tab.0.right" timestamp="1590485852258">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1350" height="182" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590410708433" />
+    <state width="1350" height="182" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590485852258" />
     <state width="1537" height="155" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590416712566" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1590411064169">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1367" height="231" key="GridCell.Tab.1.bottom" timestamp="1590417281104">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="231" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590398650920" />
+    <state width="1367" height="231" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590417281104" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590411064169" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1590411064169">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1367" height="231" key="GridCell.Tab.1.center" timestamp="1590417281104">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="231" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1590398650919" />
+    <state width="1367" height="231" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1590417281104" />
     <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1590411064169" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1590411064169">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1367" height="231" key="GridCell.Tab.1.left" timestamp="1590417281104">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="231" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1590398650919" />
+    <state width="1367" height="231" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1590417281104" />
     <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1590411064169" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1590411064169">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1367" height="231" key="GridCell.Tab.1.right" timestamp="1590417281104">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1367" height="231" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1590398650920" />
+    <state width="1367" height="231" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1590417281104" />
     <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1590411064169" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1589897216267">
       <screen x="0" y="0" width="1366" height="728" />
