@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09bcf2bd-2799-4b13-97ca-be2f3dfe37c9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/PaginaManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PaginaManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Carti.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Carti.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PaginaClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PaginaClient.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PaginaManager.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PaginaManager.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590072075230</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="&quot;Adaugare meniu manager&quot;">
+      <created>1590488487424</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590488487424</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,7 +148,8 @@
     <MESSAGE value="&quot;Adaugare Functionalitate butoane&quot;" />
     <MESSAGE value="&quot;Alt commit&quot;" />
     <MESSAGE value="&quot;Fisier json adaugat&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Fisier json adaugat&quot;" />
+    <MESSAGE value="&quot;Adaugare meniu manager&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Adaugare meniu manager&quot;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -174,10 +173,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1590060952458" />
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1590072073604">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1590488484211">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1590072073604" />
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1590488484211" />
     <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1587737864401">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -226,10 +225,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1589897216267" />
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1590072096876">
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1590488500034">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1590072096876" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1590488500034" />
     <state x="484" y="156" key="git4idea.merge.GitMergeDialog" timestamp="1589539362830">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
