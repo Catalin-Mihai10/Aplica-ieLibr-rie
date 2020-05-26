@@ -6,6 +6,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -26,6 +29,9 @@ public class PaginaClient {
     private ListView<String> lista = new ListView<String>();
     @FXML
     private TextArea text;
+    @FXML
+    private TextField baraCautare;
+
     private ObservableList<String> observ = FXCollections.observableArrayList();
 
 
@@ -166,8 +172,8 @@ public class PaginaClient {
             while (it.hasNext()) {
                 JSONObject obiect = it.next();
                 if(obiect.get("Titlu:").toString().equals(lista.getSelectionModel().getSelectedItem())){
-                    det = "Titlu: "+obiect.get("Titlu:")+"\nAutor: "+obiect.get("Autor:")+"\nEditura:"
-                            +obiect.get("Editura: ")+"\nPret: "+obiect.get("Pret:")+" lei";
+                    det = "Titlu: "+obiect.get("Titlu:")+"\nAutor: "+obiect.get("Autor:")+"\nEditura: "
+                            +obiect.get("Editura:")+"\nPret: "+obiect.get("Pret:")+" lei";
                 }
             }
             text.setText(det);
@@ -175,6 +181,33 @@ public class PaginaClient {
             e.printStackTrace();
         } catch (ParseException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void baraCautare(KeyEvent keyEvent){
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            observ.clear();
+            text.clear();
+            lista.getItems().clear();
+            JSONParser parser = new JSONParser();
+            try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+
+                JSONArray temp = (JSONArray) parser.parse(reader);
+                Iterator<JSONObject> it = temp.iterator();
+                while (it.hasNext()) {
+                    JSONObject obiect = it.next();
+                    if(obiect.get("Titlu:").toString().equals(baraCautare.getText()) || obiect.get("Autor:").toString().equals(baraCautare.getText())
+                    || obiect.get("Categorie:").toString().equals(baraCautare.getText()) || obiect.get("Editura:").toString().equals(baraCautare.getText())){
+                        observ.add(obiect.get("Titlu:").toString());
+                    }
+                }
+                lista.setItems(observ);
+                baraCautare.clear();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
