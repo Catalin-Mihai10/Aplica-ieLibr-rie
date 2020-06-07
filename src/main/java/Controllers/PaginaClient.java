@@ -41,7 +41,7 @@ public class PaginaClient extends CosDeCumparaturi{
     private JSONArray listaJson = new JSONArray();
 
     private ObservableList<String> observ = FXCollections.observableArrayList();
-    private static   ObservableList<String> observCos = FXCollections.observableArrayList();
+    private static ObservableList<String> observCos = FXCollections.observableArrayList();
 
     public void afisareSF(ActionEvent actionEvent){
         text.clear();
@@ -183,6 +183,7 @@ public class PaginaClient extends CosDeCumparaturi{
                     det = "Titlu: "+obiect.get("Titlu:")+"\nAutor: "+obiect.get("Autor:")+"\nEditura: "
                             +obiect.get("Editura:")+"\nPret: "+obiect.get("Pret:")+" lei";
                 }
+
             }
             text.setText(det);
         } catch (IOException e) {
@@ -230,7 +231,6 @@ public class PaginaClient extends CosDeCumparaturi{
                 JSONObject obj = it.next();
                 listaJson.add(obj);
                 if(obj.get("Username:").equals(PaginaLogIn.getNume())) {
-                    //listaJson.add(obj);
                     observCos.add(obj.get("Titlu:").toString());
                 }
             }
@@ -240,7 +240,6 @@ public class PaginaClient extends CosDeCumparaturi{
             e.printStackTrace();
         }
     }
-
 
 
     public void adaugareInCos(){
