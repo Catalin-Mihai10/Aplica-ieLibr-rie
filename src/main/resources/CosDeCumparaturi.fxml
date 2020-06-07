@@ -13,8 +13,9 @@
       </AnchorPane>
       <AnchorPane layoutX="499.0" prefHeight="400.0" prefWidth="111.0" style="-fx-background-color: #a0494a;">
          <children>
-            <Button layoutX="31.0" layoutY="87.0" mnemonicParsing="false" onAction="#stergeCarte" prefHeight="40.0" prefWidth="80.0" text="Eliminare" />
-            <Button layoutX="31.0" mnemonicParsing="false" onAction="#back" prefHeight="40.0" prefWidth="80.0" text="Back" />
+            <Button layoutX="9.0" layoutY="87.0" mnemonicParsing="false" onAction="#stergeCarte" prefHeight="40.0" prefWidth="102.0" text="Eliminare" />
+            <Button layoutX="9.0" mnemonicParsing="false" onAction="#back" prefHeight="40.0" prefWidth="102.0" text="Back" />
+            <Button layoutX="9.0" layoutY="346.0" mnemonicParsing="false" onAction="#confirma" prefHeight="40.0" prefWidth="102.0" text="Confirma&#10;comanda&#10;" />
          </children>
       </AnchorPane>
    </children>
