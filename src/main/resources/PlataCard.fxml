@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PlataCard">
+   <children>
+      <TextField fx:id="text1" layoutX="92.0" layoutY="83.0" prefHeight="26.0" prefWidth="353.0" />
+      <Text layoutX="92.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numarul cardului" />
+      <TextField fx:id="text2" layoutX="92.0" layoutY="148.0" prefHeight="26.0" prefWidth="51.0" promptText="Luna" />
+      <TextField fx:id="text3" layoutX="151.0" layoutY="149.0" prefHeight="26.0" prefWidth="74.0" promptText="Anul" />
+      <Text layoutX="92.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data expirarii" />
+      <TextField fx:id="text4" layoutX="300.0" layoutY="149.0" promptText="CVV/CVV2" />
+      <Text layoutX="300.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cod de securitate" />
+      <Button layoutX="538.0" layoutY="1.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="61.0" text="Back" />
+      <Button layoutX="469.0" layoutY="355.0" mnemonicParsing="false" onAction="#finalizare" prefHeight="39.0" prefWidth="125.0" text="Finalizare&#10;comanda" />
+   </children>
+</AnchorPane>
