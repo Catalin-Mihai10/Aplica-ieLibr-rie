@@ -242,7 +242,6 @@ public class PaginaClient extends CosDeCumparaturi{
         }
     }
 
-
     public void adaugareInCos(){
         CitesteFisier();
 
@@ -283,6 +282,8 @@ public class PaginaClient extends CosDeCumparaturi{
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("PaginaAchizitii.fxml"));
             AnchorPane paginaA = (AnchorPane) loader.load();
+            PaginaAchizitii controller = loader.getController();
+            controller.setlistaAchizitii();
             Scene scene = new Scene(paginaA);
             Stage stage = new Stage();
             stage.setScene(scene);
