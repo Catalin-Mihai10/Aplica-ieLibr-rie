@@ -79,6 +79,7 @@ public class MetodePlata {
             loader.setLocation(getClass().getClassLoader().getResource("ComandaFinalizata.fxml"));
             AnchorPane paginaA = (AnchorPane) loader.load();
             adaugaAchizitii();
+            stergereCos();
             Scene scene = new Scene(paginaA);
             Stage stage = new Stage();
             stage.setScene(scene);
@@ -100,5 +101,30 @@ public class MetodePlata {
             throw new NuSaAdaugatCarte();
         }
 
+    }
+
+    public void stergereCos(){
+        listaJson.clear();
+        JSONParser parser = new JSONParser();
+        try (Reader reader = new FileReader("src/main/resources/Cos.json")) {
+            JSONArray temp = (JSONArray) parser.parse(reader);
+            Iterator<JSONObject> it = temp.iterator();
+            while (it.hasNext()) {
+                JSONObject obj = it.next();
+                if(!obj.get("Username:").toString().equals(PaginaLogIn.getNume())) {
+                    listaJson.add(obj);
+                }
+            }
+            try (FileWriter fisier = new FileWriter("src/main/resources/Cos.json")) {
+                fisier.write(listaJson.toJSONString());
+                fisier.flush();
+            } catch (IOException e) {
+                throw new NuSaAdaugatCarte();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 }
