@@ -26,7 +26,7 @@ public class PaginaLogIn extends PaginaInregistrare {
     private TextField username;
     @FXML
     private PasswordField parola;
-
+    protected static String nume;
 
     public void back(ActionEvent actionEvent) {
         try {
@@ -56,6 +56,7 @@ public class PaginaLogIn extends PaginaInregistrare {
                 stage.setScene(scene);
                 stage.show();
                 ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+                nume=username.getText();
             }
             else {
                 throw new UsernameSauParolaGresite();
@@ -82,5 +83,9 @@ public class PaginaLogIn extends PaginaInregistrare {
             e.printStackTrace();
         }
         return 0;
+    }
+
+    public static String getNume(){
+        return nume;
     }
 }

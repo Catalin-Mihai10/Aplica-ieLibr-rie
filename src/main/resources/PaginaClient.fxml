@@ -6,18 +6,20 @@
     <children>
         <AnchorPane prefHeight="400.0" prefWidth="121.0" style="-fx-background-color: #21D70E;">
             <children>
-                <Button layoutY="81.0" mnemonicParsing="false" onAction="#afisareDrama" prefHeight="40.0" prefWidth="122.0" text="Drama" />
-                <Button layoutY="41.0" mnemonicParsing="false" onAction="#afisareActiune" prefHeight="40.0" prefWidth="122.0" text="Actiune" />
-                <Button layoutY="121.0" mnemonicParsing="false" onAction="#afisareSF" prefHeight="40.0" prefWidth="122.0" text="SF" />
-                <Button layoutY="161.0" mnemonicParsing="false" onAction="#afisareHorror" prefHeight="40.0" prefWidth="122.0" text="Horror" />
-                <Button layoutY="201.0" mnemonicParsing="false" onAction="#afisarePopulare" prefHeight="40.0" prefWidth="122.0" text="UwO" />
-                <TextField fx:id="baraCautare" layoutY="267.0" onKeyReleased="#baraCautare" prefHeight="31.0" prefWidth="122.0" promptText="Cauta carte..." />
+                <Button layoutY="140.0" mnemonicParsing="false" onAction="#afisareDrama" prefHeight="40.0" prefWidth="122.0" text="Drama" />
+                <Button layoutY="100.0" mnemonicParsing="false" onAction="#afisareActiune" prefHeight="40.0" prefWidth="122.0" text="Actiune" />
+                <Button layoutY="180.0" mnemonicParsing="false" onAction="#afisareSF" prefHeight="40.0" prefWidth="122.0" text="SF" />
+                <Button layoutY="220.0" mnemonicParsing="false" onAction="#afisareHorror" prefHeight="40.0" prefWidth="122.0" text="Horror" />
+                <Button layoutY="260.0" mnemonicParsing="false" onAction="#afisarePopulare" prefHeight="40.0" prefWidth="122.0" text="UwO" />
+                <TextField fx:id="baraCautare" layoutY="39.0" onKeyReleased="#baraCautare" prefHeight="31.0" prefWidth="122.0" promptText="Cauta carte..." />
+            <Button layoutY="300.0" mnemonicParsing="false" onAction="#vizualizareCos" prefHeight="40.0" prefWidth="122.0" text="Cos de cumparaturi" />
             </children>
         </AnchorPane>
         <AnchorPane layoutX="117.0" prefHeight="400.0" prefWidth="484.0" style="-fx-background-color: #D70E0E;">
             <children>
                 <ListView fx:id="lista" layoutX="8.0" layoutY="7.0" onMouseClicked="#afisareDetalii" prefHeight="386.0" prefWidth="232.0" />
                 <TextArea fx:id="text" editable="false" layoutX="242.0" layoutY="7.0" prefHeight="386.0" prefWidth="232.0" />
+            <Button layoutX="347.0" layoutY="346.0" mnemonicParsing="false" onAction="#adaugareInCos" prefHeight="40.0" prefWidth="122.0" text="Adauga in cos" />
             </children>
         </AnchorPane>
     </children>
