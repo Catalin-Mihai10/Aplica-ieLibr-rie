@@ -222,6 +222,7 @@ public class PaginaClient extends CosDeCumparaturi{
 
     private void CitesteFisier(){
         observCos.clear();
+        listaJson.clear();
         JSONParser parser = new JSONParser();
         try (Reader reader = new FileReader("src/main/resources/Cos.json")) {
 
@@ -244,6 +245,7 @@ public class PaginaClient extends CosDeCumparaturi{
 
     public void adaugareInCos(){
         CitesteFisier();
+
         JSONObject obiect = new JSONObject();
         obiect.put("Username:", PaginaLogIn.getNume());
         obiect.put("Titlu:", lista.getSelectionModel().getSelectedItem());

@@ -28,10 +28,8 @@ public class CosDeCumparaturi {
     private ListView<String> listaCumparaturi = new ListView<>();
     @FXML
     private TextArea text;
-    @FXML
-    private TextArea total;
     private JSONArray listaJson = new JSONArray();
-    private float suma = 0;
+
     public void back(ActionEvent actionEvent) {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -70,27 +68,26 @@ public class CosDeCumparaturi {
     }
 
     public void stergeCarte(){
+        listaJson.clear();
         JSONParser parser = new JSONParser();
         try (Reader reader = new FileReader("src/main/resources/Cos.json")) {
-
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
             while (it.hasNext()) {
                 JSONObject obj = it.next();
                 listaJson.add(obj);
             }
-            System.out.println(listaJson.toString());
+            JSONObject obiect = new JSONObject();
             Iterator<JSONObject> ob = listaJson.iterator();
             while(ob.hasNext()){
-                JSONObject obiect = ob.next();
+                obiect = ob.next();
                 if(obiect.get("Username:").equals(PaginaLogIn.getNume()) &&
                         obiect.get("Titlu:").equals(listaCumparaturi.getSelectionModel().getSelectedItem())){
-                    suma -= Float.valueOf(obiect.get("Pret:").toString());
-                    ob.remove();
                     listaCumparaturi.getItems().remove(listaCumparaturi.getSelectionModel().getSelectedItem());
+                    break;
                 }
             }
-            System.out.println(listaJson.toString());
+            listaJson.remove(obiect);
             try (FileWriter fisier = new FileWriter("src/main/resources/Cos.json")) {
                 fisier.write(listaJson.toJSONString());
                 fisier.flush();
@@ -106,7 +103,6 @@ public class CosDeCumparaturi {
 
     public void afisareSuma(){
         String det = "";
-        String sumatotala = "";
         JSONParser parser = new JSONParser();
         try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
 
@@ -117,11 +113,8 @@ public class CosDeCumparaturi {
                 if(obiect.get("Titlu:").toString().equals(listaCumparaturi.getSelectionModel().getSelectedItem())){
                     det = "Pret: "+obiect.get("Pret:")+" lei";
                 }
-                suma += Float.valueOf(obiect.get("Pret:").toString());
             }
-            sumatotala = "Suma Totala: "+ suma + " lei";
             text.setText(det);
-            total.setText(sumatotala);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ParseException e) {
