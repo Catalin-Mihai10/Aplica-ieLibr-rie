@@ -20,7 +20,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("PaginaAutentificare.fxml"));
-            AnchorPane paginaA = (AnchorPane) loader.load();
+            paginaA = (AnchorPane) loader.load();
 
             Scene scene = new Scene(paginaA);
             primaryStage.setScene(scene);

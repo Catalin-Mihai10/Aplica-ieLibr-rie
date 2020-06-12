@@ -13,6 +13,7 @@
                 <Button layoutY="260.0" mnemonicParsing="false" onAction="#afisarePopulare" prefHeight="40.0" prefWidth="122.0" text="UwO" />
                 <TextField fx:id="baraCautare" layoutY="39.0" onKeyReleased="#baraCautare" prefHeight="31.0" prefWidth="122.0" promptText="Cauta carte..." />
             <Button layoutY="300.0" mnemonicParsing="false" onAction="#vizualizareCos" prefHeight="40.0" prefWidth="122.0" text="Cos de cumparaturi" />
+            <Button layoutY="340.0" mnemonicParsing="false" onAction="#vizualizareAchizitii" prefHeight="40.0" prefWidth="122.0" text="Achizitii" />
             </children>
         </AnchorPane>
         <AnchorPane layoutX="117.0" prefHeight="400.0" prefWidth="484.0" style="-fx-background-color: #D70E0E;">

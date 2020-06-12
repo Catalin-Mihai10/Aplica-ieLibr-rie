@@ -50,7 +50,7 @@ public class CosDeCumparaturi {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("MetodePlata.fxml"));
-            AnchorPane paginaA = (AnchorPane) loader.load();
+            AnchorPane paginaA = loader.load();
             Scene scene = new Scene(paginaA);
             Stage stage = new Stage();
             stage.setScene(scene);
