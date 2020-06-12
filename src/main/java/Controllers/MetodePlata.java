@@ -13,7 +13,10 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.*;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Iterator;
+import java.util.Random;
 
 public class MetodePlata {
 
@@ -22,6 +25,10 @@ public class MetodePlata {
 
     public void getFromCos(){
         listaJson.clear();
+        Calendar data1 = Calendar.getInstance();
+        data1.setTime(new Date());
+        Random r = new Random();
+        int random = r.nextInt(7-1)+1;
         JSONParser parser = new JSONParser();
         try (Reader reader = new FileReader("src/main/resources/Cos.json")) {
 
@@ -30,6 +37,8 @@ public class MetodePlata {
             while (it.hasNext()) {
                 JSONObject obj = it.next();
                 if(obj.get("Username:").equals(PaginaLogIn.getNume())) {
+                    obj.put("Data:",data1.get(Calendar.DATE)+"-"+data1.get(Calendar.MONTH)+"-"+data1.get(Calendar.YEAR));
+                    obj.put("Estimare:",random);
                     listaJson.add(obj);
                 }
             }
@@ -145,7 +154,7 @@ public class MetodePlata {
         }
     }
 
-        public void adaugaAchizitii() {
+    public void adaugaAchizitii() {
         getFromCos();
         Citeste();
         rangSiStoc();

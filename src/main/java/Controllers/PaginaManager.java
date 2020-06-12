@@ -29,7 +29,6 @@ public class PaginaManager {
 
     private ObservableList<String> observ = FXCollections.observableArrayList();
 
-
     public void afisareSF(ActionEvent actionEvent){
         text.clear();
         lista.getItems().clear();
@@ -186,5 +185,9 @@ public class PaginaManager {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void afisareAchizitii(){
+
     }
 }
