@@ -86,14 +86,13 @@ public class PaginaInregistrare {
 
     public void Inregistrare(ActionEvent actionEvent) throws UtilizatorulExistaDeja{
         c = new Client(username.getText(),parola.getText());
-
         if(ExistaUtilizator(c.getUsername()) == 1) {
             throw new UtilizatorulExistaDeja(username.getText());
         }else {
             CitesteFisier();
             JSONObject obiect = new JSONObject();
             obiect.put("Username:", c.getUsername());
-            obiect.put("Parola:", c.getPassword());
+            obiect.put("Parola:", c.getEncodePassword());
 
             try (FileWriter fisier = new FileWriter(fis)) {
                 lista.add(obiect);

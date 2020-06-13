@@ -1,6 +1,7 @@
 package Controllers;
 
 import Exceptii.UsernameSauParolaGresite;
+import Utilizatori.Client;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -69,13 +70,16 @@ public class PaginaLogIn extends PaginaInregistrare {
 
     public int  verificareUtilizator() {
         JSONParser parser = new JSONParser();
+        Client c = new Client(username.getText(),parola.getText());
         try (Reader reader = new FileReader("src/main/resources/user.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
             while (it.hasNext()) {
                 JSONObject obiect = it.next();
-                if(obiect.get("Username:").equals(username.getText()) && obiect.get("Parola:").equals(parola.getText())) return 1;
+
+                if(obiect.get("Username:").toString().equals(c.getUsername()) &&
+                        obiect.get("Parola:").equals(c.getEncodePassword())) return 1;
             }
         } catch (IOException e) {
             e.printStackTrace();

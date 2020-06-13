@@ -1,5 +1,6 @@
 package Controllers;
 
+import Utilizatori.Manager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -59,10 +60,11 @@ public class PaginaAutentificareManager {
 
     public int verificareManager() {
         JSONParser parser = new JSONParser();
+        Manager m = new Manager(username.getText(),parola.getText());
         try (Reader reader = new FileReader("src/main/resources/manager.json")) {
 
             JSONObject obiect = (JSONObject) parser.parse(reader);
-            if (obiect.get("Username:").equals(username.getText()) && obiect.get("Parola:").equals(parola.getText())) {
+            if (obiect.get("Username:").toString().equals(m.getUsername()) && obiect.get("Parola:").toString().equals(m.getEncodedPassword())) {
                 return 1;
             }
 
