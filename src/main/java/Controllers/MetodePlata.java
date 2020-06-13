@@ -2,9 +2,11 @@ package Controllers;
 
 import Exceptii.NuSaAdaugatCarte;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.json.simple.JSONArray;
@@ -20,6 +22,10 @@ import java.util.Random;
 
 public class MetodePlata {
 
+    @FXML
+    private TextField text1;
+    @FXML
+    private TextField text2;
     private JSONArray listaJson = new JSONArray();
     private JSONArray listaAchizitii = new JSONArray();
 
@@ -83,14 +89,30 @@ public class MetodePlata {
 
     public void plataCard(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("PlataCard.fxml"));
-            AnchorPane paginaA = (AnchorPane) loader.load();
-            Scene scene = new Scene(paginaA);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            if(!text1.getText().isEmpty()&&!text2.getText().isEmpty()) {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getClassLoader().getResource("PlataCard.fxml"));
+                AnchorPane paginaA = (AnchorPane) loader.load();
+                Scene scene = new Scene(paginaA);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.show();
+                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+            }else{
+                try {
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(getClass().getClassLoader().getResource("Eroare.fxml"));
+                    AnchorPane paginaA = (AnchorPane) loader.load();
+                    Eroare controller = loader.getController();
+                    controller.setText("Campurile trebuie\ncompletate!");
+                    Scene scene = new Scene(paginaA);
+                    Stage stage = new Stage();
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -99,16 +121,32 @@ public class MetodePlata {
 
     public void finalizare(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("ComandaFinalizata.fxml"));
-            AnchorPane paginaA = (AnchorPane) loader.load();
-            adaugaAchizitii();
-            stergereCos();
-            Scene scene = new Scene(paginaA);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            if(!text1.getText().isEmpty()&&!text2.getText().isEmpty()) {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getClassLoader().getResource("ComandaFinalizata.fxml"));
+                AnchorPane paginaA = (AnchorPane) loader.load();
+                adaugaAchizitii();
+                stergereCos();
+                Scene scene = new Scene(paginaA);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.show();
+                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+            }else{
+                try {
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(getClass().getClassLoader().getResource("Eroare.fxml"));
+                    AnchorPane paginaA = (AnchorPane) loader.load();
+                    Eroare controller = loader.getController();
+                    controller.setText("Campurile trebuie\ncompletate!");
+                    Scene scene = new Scene(paginaA);
+                    Stage stage = new Stage();
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         catch (IOException e) {
             e.printStackTrace();

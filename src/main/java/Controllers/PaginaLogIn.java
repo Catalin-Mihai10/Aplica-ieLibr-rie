@@ -60,6 +60,21 @@ public class PaginaLogIn extends PaginaInregistrare {
                 nume=username.getText();
             }
             else {
+                username.clear();
+                parola.clear();
+                try {
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(getClass().getClassLoader().getResource("Eroare.fxml"));
+                    AnchorPane paginaA = (AnchorPane) loader.load();
+                    Eroare controller = loader.getController();
+                    controller.setText("Username sau parola\ngresite!");
+                    Scene scene = new Scene(paginaA);
+                    Stage stage = new Stage();
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 throw new UsernameSauParolaGresite();
             }
         }

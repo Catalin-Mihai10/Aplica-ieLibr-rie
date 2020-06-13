@@ -48,14 +48,30 @@ public class CosDeCumparaturi {
 
     public void confirma(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("MetodePlata.fxml"));
-            AnchorPane paginaA = loader.load();
-            Scene scene = new Scene(paginaA);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            if(!listaCumparaturi.getItems().isEmpty()) {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getClassLoader().getResource("MetodePlata.fxml"));
+                AnchorPane paginaA = loader.load();
+                Scene scene = new Scene(paginaA);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.show();
+                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+            }else{
+                try {
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(getClass().getClassLoader().getResource("Eroare.fxml"));
+                    AnchorPane paginaA = (AnchorPane) loader.load();
+                    Eroare controller = loader.getController();
+                    controller.setText("Cosul este gol!");
+                    Scene scene = new Scene(paginaA);
+                    Stage stage = new Stage();
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         catch (IOException e) {
             e.printStackTrace();

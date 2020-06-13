@@ -47,7 +47,7 @@ public class PaginaInregistrare {
     }
 
 
-    private static int ExistaUtilizator(String username) throws UtilizatorulExistaDeja{
+    private static int ExistaUtilizator(String username) {
         JSONParser parser = new JSONParser();
         try (Reader reader = new FileReader("src/main/resources/user.json")) {
 
@@ -84,10 +84,26 @@ public class PaginaInregistrare {
         }
     }
 
-    public void Inregistrare(ActionEvent actionEvent) throws UtilizatorulExistaDeja{
+    public void Inregistrare() throws UtilizatorulExistaDeja {
         c = new Client(username.getText(),parola.getText());
         if(ExistaUtilizator(c.getUsername()) == 1) {
+            username.clear();
+            parola.clear();
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getClassLoader().getResource("Eroare.fxml"));
+                AnchorPane paginaA = (AnchorPane) loader.load();
+                Eroare controller = loader.getController();
+                controller.setText("Un utilizator cu username-ul\nacesta exista deja!");
+                Scene scene = new Scene(paginaA);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             throw new UtilizatorulExistaDeja(username.getText());
+
         }else {
             CitesteFisier();
             JSONObject obiect = new JSONObject();
