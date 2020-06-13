@@ -84,7 +84,7 @@ public class PaginaInregistrare {
         }
     }
 
-    public void Inregistrare() throws UtilizatorulExistaDeja {
+    public void Inregistrare(ActionEvent actionEvent) throws UtilizatorulExistaDeja {
         c = new Client(username.getText(),parola.getText());
         if(ExistaUtilizator(c.getUsername()) == 1) {
             username.clear();
@@ -116,6 +116,31 @@ public class PaginaInregistrare {
                 fisier.flush();
             } catch (IOException e) {
                 throw new NuSaScrisUtil();
+            }
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getClassLoader().getResource("PaginaAutentificare.fxml"));
+                AnchorPane paginaA = (AnchorPane) loader.load();
+                Scene scene = new Scene(paginaA);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.show();
+                ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                FXMLLoader loader2 = new FXMLLoader();
+                loader2.setLocation(getClass().getClassLoader().getResource("Eroare.fxml"));
+                AnchorPane paginaB = (AnchorPane) loader2.load();
+                Eroare controller = loader2.getController();
+                controller.setText("Utilizatorul a fost\ncreat cu succes!");
+                Scene scene2 = new Scene(paginaB);
+                Stage stage2 = new Stage();
+                stage2.setScene(scene2);
+                stage2.show();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }
