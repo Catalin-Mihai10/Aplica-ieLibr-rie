@@ -36,7 +36,7 @@ public class MetodePlata {
             Iterator<JSONObject> it = temp.iterator();
             while (it.hasNext()) {
                 JSONObject obj = it.next();
-                if(obj.get("Username:").equals(PaginaLogIn.getNume())) {
+                if(obj.get("Username:").toString().equals(PaginaLogIn.getNume())) {
                     obj.put("Data:",data1.get(Calendar.DATE)+"-"+data1.get(Calendar.MONTH)+"-"+data1.get(Calendar.YEAR));
                     obj.put("Estimare:",random);
                     listaJson.add(obj);
@@ -57,9 +57,7 @@ public class MetodePlata {
             Iterator<JSONObject> it = temp.iterator();
             while (it.hasNext()) {
                 JSONObject obj = it.next();
-                if(obj.get("Username:").equals(PaginaLogIn.getNume())) {
-                    listaAchizitii.add(obj);
-                }
+                listaAchizitii.add(obj);
             }
         } catch (IOException e) {
             e.printStackTrace();

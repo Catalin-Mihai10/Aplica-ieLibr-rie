@@ -117,9 +117,7 @@ public class PlataCard {
             Iterator<JSONObject> it = temp.iterator();
             while (it.hasNext()) {
                 JSONObject obj = it.next();
-                if(obj.get("Username:").equals(PaginaLogIn.getNume())) {
-                    listaAchizitii.add(obj);
-                }
+                listaAchizitii.add(obj);
             }
         } catch (IOException e) {
             e.printStackTrace();
