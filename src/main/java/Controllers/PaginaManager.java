@@ -4,16 +4,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -26,9 +21,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 
-public class PaginaManager {
+public class PaginaManager extends ControllerGeneral{
     @FXML
-    private ListView<String> lista = new ListView<String>();
+    private ListView<String> lista = new ListView<>();
     @FXML
     private TextArea text;
     @FXML
@@ -36,92 +31,32 @@ public class PaginaManager {
 
     private ObservableList<String> observ = FXCollections.observableArrayList();
 
-    public void afisareSF(ActionEvent actionEvent){
+    public void afisareSF(){
         text.clear();
         lista.getItems().clear();
-        JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
-
-            JSONArray temp = (JSONArray) parser.parse(reader);
-            Iterator<JSONObject> it = temp.iterator();
-            while (it.hasNext()) {
-                JSONObject obiect = it.next();
-                if(obiect.get("Categorie:").toString().equals("SF")){
-                    observ.add(obiect.get("Titlu:").toString());
-                }
-            }
-            lista.setItems(observ);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        String s = "SF";
+        citireJson(lista,s,observ);
     }
 
-    public void afisareActiune(ActionEvent actionEvent){
+    public void afisareActiune(){
         text.clear();
         lista.getItems().clear();
-        JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
-
-            JSONArray temp = (JSONArray) parser.parse(reader);
-            Iterator<JSONObject> it = temp.iterator();
-            while (it.hasNext()) {
-                JSONObject obiect = it.next();
-                if(obiect.get("Categorie:").toString().equals("Actiune")){
-                    observ.add(obiect.get("Titlu:").toString());
-                }
-            }
-            lista.setItems(observ);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        String s = "Actiune";
+        citireJson(lista,s,observ);
     }
 
-    public void afisareDrama(ActionEvent actionEvent){
+    public void afisareDrama(){
         text.clear();
         lista.getItems().clear();
-        JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
-
-            JSONArray temp = (JSONArray) parser.parse(reader);
-            Iterator<JSONObject> it = temp.iterator();
-            while (it.hasNext()) {
-                JSONObject obiect = it.next();
-                if(obiect.get("Categorie:").toString().equals("Drama")){
-                    observ.add(obiect.get("Titlu:").toString());
-                }
-            }
-            lista.setItems(observ);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        String s = "Drama";
+        citireJson(lista,s,observ);
     }
 
-    public void afisareHorror(ActionEvent actionEvent){
+    public void afisareHorror(){
         text.clear();
         lista.getItems().clear();
-        JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
-
-            JSONArray temp = (JSONArray) parser.parse(reader);
-            Iterator<JSONObject> it = temp.iterator();
-            while (it.hasNext()) {
-                JSONObject obiect = it.next();
-                if(obiect.get("Categorie:").toString().equals("Horror")){
-                    observ.add(obiect.get("Titlu:").toString());
-                }
-            }
-            lista.setItems(observ);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        String s = "Horror";
+        citireJson(lista,s,observ);
     }
 
     public void afisareDetalii(){
@@ -219,17 +154,7 @@ public class PaginaManager {
     }
 
     public void logOut(ActionEvent actionEvent) {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("PaginaAutentificare.fxml"));
-            AnchorPane paginaA = (AnchorPane) loader.load();
-            Scene scene = new Scene(paginaA);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        String s = "PaginaAutentificare.fxml";
+        redirectioneazaPagina(actionEvent,s);
     }
 }

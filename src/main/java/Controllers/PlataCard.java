@@ -22,7 +22,7 @@ import java.util.Iterator;
 import java.util.Random;
 
 
-public class PlataCard {
+public class PlataCard extends ControllerGeneral{
     @FXML
     private TextField text1;
     @FXML
@@ -35,19 +35,8 @@ public class PlataCard {
     private JSONArray listaAchizitii = new JSONArray();
 
     public void back(ActionEvent actionEvent) {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("MetodePlata.fxml"));
-            AnchorPane paginaA = (AnchorPane) loader.load();
-            Scene scene = new Scene(paginaA);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        String s = "MetodePlata.fxml";
+        redirectioneazaPagina(actionEvent,s);
     }
 
     public void finalizare(ActionEvent actionEvent) {
@@ -55,7 +44,7 @@ public class PlataCard {
             try {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getClassLoader().getResource("ComandaFinalizata.fxml"));
-                AnchorPane paginaA = (AnchorPane) loader.load();
+                AnchorPane paginaA = loader.load();
                 adaugaAchizitii();
                 stergereCos();
                 Scene scene = new Scene(paginaA);
@@ -67,19 +56,8 @@ public class PlataCard {
                 e.printStackTrace();
             }
         }else {
-            try {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getClassLoader().getResource("Eroare.fxml"));
-                AnchorPane paginaA = (AnchorPane) loader.load();
-                Eroare controller = loader.getController();
-                controller.setText("Campuri completate\ngresit!");
-                Scene scene = new Scene(paginaA);
-                Stage stage = new Stage();
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            String m = "Campuri completate\ngresit!";
+            redirectionareEroare(m);
             throw new DetaliiCardIncorecte();
         }
     }

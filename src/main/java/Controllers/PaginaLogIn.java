@@ -4,13 +4,8 @@ import Exceptii.UsernameSauParolaGresite;
 import Utilizatori.Client;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -21,7 +16,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.Iterator;
 
-public class PaginaLogIn extends PaginaInregistrare {
+public class PaginaLogIn extends ControllerGeneral {
 
     @FXML
     private TextField username;
@@ -30,57 +25,22 @@ public class PaginaLogIn extends PaginaInregistrare {
     protected static String nume;
 
     public void back(ActionEvent actionEvent) {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("PaginaAutentificare.fxml"));
-            AnchorPane paginaA = (AnchorPane) loader.load();
-            Scene scene = new Scene(paginaA);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            // Hide this current window (if this is what you want
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        String s = "PaginaAutentificare.fxml";
+        redirectioneazaPagina(actionEvent,s);
     }
 
     public void redirectionare(ActionEvent actionEvent) throws UsernameSauParolaGresite {
-        try {
-            if(verificareUtilizator()==1) {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getClassLoader().getResource("PaginaClient.fxml"));
-                AnchorPane paginaA = (AnchorPane) loader.load();
-                Scene scene = new Scene(paginaA);
-                Stage stage = new Stage();
-                stage.setScene(scene);
-                stage.show();
-                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-                nume=username.getText();
-            }
-            else {
+        nume = username.getText();
+        if(verificareUtilizator()==1) {
+            String s = "PaginaClient.fxml";
+            redirectioneazaPagina(actionEvent,s);
+        }else {
                 username.clear();
                 parola.clear();
-                try {
-                    FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(getClass().getClassLoader().getResource("Eroare.fxml"));
-                    AnchorPane paginaA = (AnchorPane) loader.load();
-                    Eroare controller = loader.getController();
-                    controller.setText("Username sau parola\ngresite!");
-                    Scene scene = new Scene(paginaA);
-                    Stage stage = new Stage();
-                    stage.setScene(scene);
-                    stage.show();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                String m = "Username sau parola\ngresite!";
+                redirectionareEroare(m);
                 throw new UsernameSauParolaGresite();
             }
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public int  verificareUtilizator() {

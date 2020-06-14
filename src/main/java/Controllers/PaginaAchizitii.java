@@ -4,13 +4,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -23,7 +18,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 
-public class PaginaAchizitii {
+public class PaginaAchizitii extends ControllerGeneral{
 
     @FXML
     private ListView<String> listaAchizitii = new ListView<>();
@@ -54,19 +49,8 @@ public class PaginaAchizitii {
     }
 
     public void back(ActionEvent actionEvent) {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("PaginaClient.fxml"));
-            AnchorPane paginaA = (AnchorPane) loader.load();
-            Scene scene = new Scene(paginaA);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        String s = "PaginaClient.fxml";
+        redirectioneazaPagina(actionEvent,s);
     }
 
     public void afisareDetalii(){

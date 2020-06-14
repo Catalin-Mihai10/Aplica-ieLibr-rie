@@ -20,7 +20,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.Random;
 
-public class MetodePlata {
+public class MetodePlata extends ControllerGeneral{
 
     @FXML
     private TextField text1;
@@ -73,58 +73,26 @@ public class MetodePlata {
     }
 
     public void back(ActionEvent actionEvent) {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("CosDeCumparaturi.fxml"));
-            AnchorPane paginaA = (AnchorPane) loader.load();
-            Scene scene = new Scene(paginaA);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        String s = "CosDeCumparaturi.fxml";
+        redirectioneazaPagina(actionEvent,s);
     }
 
     public void plataCard(ActionEvent actionEvent) {
-        try {
-            if(!text1.getText().isEmpty()&&!text2.getText().isEmpty()) {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getClassLoader().getResource("PlataCard.fxml"));
-                AnchorPane paginaA = (AnchorPane) loader.load();
-                Scene scene = new Scene(paginaA);
-                Stage stage = new Stage();
-                stage.setScene(scene);
-                stage.show();
-                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-            }else{
-                try {
-                    FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(getClass().getClassLoader().getResource("Eroare.fxml"));
-                    AnchorPane paginaA = (AnchorPane) loader.load();
-                    Eroare controller = loader.getController();
-                    controller.setText("Campurile trebuie\ncompletate!");
-                    Scene scene = new Scene(paginaA);
-                    Stage stage = new Stage();
-                    stage.setScene(scene);
-                    stage.show();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        catch (IOException e) {
-            e.printStackTrace();
+        if(!text1.getText().isEmpty()&&!text2.getText().isEmpty()) {
+            String s = "PlataCard.fxml";
+            redirectioneazaPagina(actionEvent,s);
+        }else{
+            String m = "Campurile trebuie\ncompletate!";
+            redirectionareEroare(m);
         }
     }
 
     public void finalizare(ActionEvent actionEvent) {
-        try {
-            if(!text1.getText().isEmpty()&&!text2.getText().isEmpty()) {
+        if(!text1.getText().isEmpty()&&!text2.getText().isEmpty()) {
+            try {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getClassLoader().getResource("ComandaFinalizata.fxml"));
-                AnchorPane paginaA = (AnchorPane) loader.load();
+                AnchorPane paginaA = loader.load();
                 adaugaAchizitii();
                 stergereCos();
                 Scene scene = new Scene(paginaA);
@@ -132,24 +100,12 @@ public class MetodePlata {
                 stage.setScene(scene);
                 stage.show();
                 ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-            }else{
-                try {
-                    FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(getClass().getClassLoader().getResource("Eroare.fxml"));
-                    AnchorPane paginaA = (AnchorPane) loader.load();
-                    Eroare controller = loader.getController();
-                    controller.setText("Campurile trebuie\ncompletate!");
-                    Scene scene = new Scene(paginaA);
-                    Stage stage = new Stage();
-                    stage.setScene(scene);
-                    stage.show();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        }
-        catch (IOException e) {
-            e.printStackTrace();
+        }else{
+            String m = "Campurile trebuie\ncompletate!";
+            redirectionareEroare(m);
         }
     }
 
