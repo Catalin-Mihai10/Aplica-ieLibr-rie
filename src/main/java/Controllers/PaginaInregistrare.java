@@ -22,7 +22,8 @@ public class PaginaInregistrare extends ControllerGeneral{
     @FXML
     private PasswordField parola;
 
-    private File fis = new File("src/main/resources/user.json");
+    private File fis = new File("/AplicatieLibrarie/build/resources/main/user.json");
+    private String p = fis.getAbsolutePath();
     private JSONArray lista = new JSONArray();
 
     public void back(ActionEvent actionEvent) {
@@ -31,9 +32,9 @@ public class PaginaInregistrare extends ControllerGeneral{
     }
 
 
-    private static int ExistaUtilizator(String username) {
+    private int ExistaUtilizator(String username) {
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/user.json")) {
+        try (Reader reader = new FileReader(p)) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -51,7 +52,7 @@ public class PaginaInregistrare extends ControllerGeneral{
 
     private void CitesteFisier(){
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/user.json")) {
+        try (Reader reader = new FileReader(p)) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -83,7 +84,7 @@ public class PaginaInregistrare extends ControllerGeneral{
             obiect.put("Username:", c.getUsername());
             obiect.put("Parola:", c.getEncodePassword());
 
-            try (FileWriter fisier = new FileWriter(fis)) {
+            try (FileWriter fisier = new FileWriter(p)) {
                 lista.add(obiect);
                 fisier.write(lista.toJSONString());
                 fisier.flush();
