@@ -42,16 +42,14 @@ public class PaginaAutentificareManager extends ControllerGeneral{
     public int verificareManager() {
         JSONParser parser = new JSONParser();
         Manager m = new Manager(username.getText(),parola.getText());
-        try (Reader reader = new FileReader("src/main/resources/manager.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\manager.json")) {
 
             JSONObject obiect = (JSONObject) parser.parse(reader);
             if (obiect.get("Username:").toString().equals(m.getUsername()) && obiect.get("Parola:").toString().equals(m.getEncodedPassword())) {
                 return 1;
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
         return 0;

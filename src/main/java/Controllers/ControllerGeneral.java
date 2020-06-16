@@ -13,9 +13,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.util.Iterator;
 
 public class ControllerGeneral {
@@ -54,7 +52,7 @@ public class ControllerGeneral {
 
     public ObservableList<String> citireJson(ListView<String> lista, String s, ObservableList<String> observ){
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -71,5 +69,41 @@ public class ControllerGeneral {
             e.printStackTrace();
         }
         return observ;
+    }
+
+    public String getUserPath(){
+        String path = new File(System.getProperty("user.dir")).getParent();
+        return path;
+    }
+
+    public void copiaza(String fisierul) throws IOException {
+        FileInputStream instream = null;
+        FileOutputStream outstream = null;
+
+        try{
+            File infile =new File(getUserPath()+"\\resources\\main"+fisierul);
+            File s = new File(getUserPath()).getParentFile();
+            File outfile =new File(s+"\\src\\main\\resources"+fisierul);
+
+            instream = new FileInputStream(infile);
+            outstream = new FileOutputStream(outfile);
+
+            byte[] buffer = new byte[1024];
+
+            int length;
+
+            while ((length = instream.read(buffer)) > 0){
+                outstream.write(buffer, 0, length);
+            }
+
+            System.out.println("File copied successfully!!");
+
+        }catch(IOException ioe){
+            ioe.printStackTrace();
+        }
+        finally{
+            instream.close();
+            outstream.close();
+        }
     }
 }

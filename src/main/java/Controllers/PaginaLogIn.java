@@ -46,7 +46,7 @@ public class PaginaLogIn extends ControllerGeneral {
     public int  verificareUtilizator() {
         JSONParser parser = new JSONParser();
         Client c = new Client(username.getText(),parola.getText());
-        try (Reader reader = new FileReader("src/main/resources/user.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\user.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();

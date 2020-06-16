@@ -62,7 +62,7 @@ public class PaginaManager extends ControllerGeneral{
     public void afisareDetalii(){
         String det = "";
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -86,7 +86,7 @@ public class PaginaManager extends ControllerGeneral{
         text.clear();
         lista.getItems().clear();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -108,7 +108,7 @@ public class PaginaManager extends ControllerGeneral{
             text.clear();
             lista.getItems().clear();
             JSONParser parser = new JSONParser();
-            try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+            try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
 
                 JSONArray temp = (JSONArray) parser.parse(reader);
                 Iterator<JSONObject> it = temp.iterator();
@@ -133,7 +133,7 @@ public class PaginaManager extends ControllerGeneral{
         text.clear();
         lista.getItems().clear();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Achizitii.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Achizitii.json")) {
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
             Calendar data1 = Calendar.getInstance();

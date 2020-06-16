@@ -45,11 +45,11 @@ public class CosDeCumparaturi extends ControllerGeneral{
         listaCumparaturi.setItems(observCos);
     }
 
-    public void stergeCarte(){
+    public void stergeCarte() throws IOException {
         listaJson.clear();
         text.clear();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Cos.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Cos.json")) {
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
             while (it.hasNext()) {
@@ -67,7 +67,7 @@ public class CosDeCumparaturi extends ControllerGeneral{
                 }
             }
             listaJson.remove(obiect);
-            try (FileWriter fisier = new FileWriter("src/main/resources/Cos.json")) {
+            try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\Cos.json")) {
                 fisier.write(listaJson.toJSONString());
                 fisier.flush();
             } catch (IOException e) {
@@ -78,12 +78,14 @@ public class CosDeCumparaturi extends ControllerGeneral{
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        String fisier = "\\Cos.json";
+        copiaza(fisier);
     }
 
-    public void afisareSuma(){
+    public void afisarePret(){
         String det = "";
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();

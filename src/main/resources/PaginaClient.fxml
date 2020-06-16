@@ -6,11 +6,11 @@
     <children>
         <AnchorPane prefHeight="400.0" prefWidth="121.0" style="-fx-background-color: #21D70E;">
             <children>
-                <Button layoutY="107.0" mnemonicParsing="false" onAction="#afisareDrama" prefHeight="40.0" prefWidth="122.0" text="Drama" />
-                <Button layoutY="67.0" mnemonicParsing="false" onAction="#afisareActiune" prefHeight="40.0" prefWidth="122.0" text="Actiune" />
+                <Button layoutY="107.0" mnemonicParsing="false" onAction="#afisareRomance" prefHeight="40.0" prefWidth="122.0" text="Romance" />
+                <Button layoutY="67.0" mnemonicParsing="false" onAction="#afisareAventura" prefHeight="40.0" prefWidth="122.0" text="Aventura" />
                 <Button layoutY="147.0" mnemonicParsing="false" onAction="#afisareSF" prefHeight="40.0" prefWidth="122.0" text="SF" />
                 <Button layoutY="187.0" mnemonicParsing="false" onAction="#afisareHorror" prefHeight="40.0" prefWidth="122.0" text="Horror" />
-                <Button layoutY="227.0" mnemonicParsing="false" onAction="#afisarePopulare" prefHeight="40.0" prefWidth="122.0" text="UwO" />
+                <Button layoutY="227.0" mnemonicParsing="false" onAction="#afisarePopulare" prefHeight="40.0" prefWidth="122.0" text="Populare" />
                 <TextField fx:id="baraCautare" layoutY="6.0" onKeyReleased="#baraCautare" prefHeight="31.0" prefWidth="122.0" promptText="Cauta carte..." />
             <Button layoutY="267.0" mnemonicParsing="false" onAction="#vizualizareCos" prefHeight="40.0" prefWidth="122.0" text="Cos de cumparaturi" />
             <Button layoutY="307.0" mnemonicParsing="false" onAction="#vizualizareAchizitii" prefHeight="40.0" prefWidth="122.0" text="Achizitii" />

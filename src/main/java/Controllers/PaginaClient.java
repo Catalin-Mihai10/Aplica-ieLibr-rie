@@ -50,17 +50,17 @@ public class PaginaClient extends ControllerGeneral{
         citireJson(lista,s,observ);
     }
 
-    public void afisareActiune(){
+    public void afisareAventura(){
         text.clear();
         lista.getItems().clear();
-        String s = "Actiune";
+        String s = "Aventura";
         citireJson(lista,s,observ);
     }
 
-    public void afisareDrama(){
+    public void afisareRomance(){
         text.clear();
         lista.getItems().clear();
-        String s = "Drama";
+        String s = "Romance";
         citireJson(lista,s,observ);
     }
 
@@ -76,7 +76,7 @@ public class PaginaClient extends ControllerGeneral{
         lista.getItems().clear();
         ArrayList<JSONObject> list = new ArrayList<>();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -113,7 +113,7 @@ public class PaginaClient extends ControllerGeneral{
     public void afisareDetalii(){
         String det = "";
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -139,7 +139,7 @@ public class PaginaClient extends ControllerGeneral{
             text.clear();
             lista.getItems().clear();
             JSONParser parser = new JSONParser();
-            try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+            try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
 
                 JSONArray temp = (JSONArray) parser.parse(reader);
                 Iterator<JSONObject> it = temp.iterator();
@@ -164,7 +164,7 @@ public class PaginaClient extends ControllerGeneral{
         observCos.clear();
         listaJson.clear();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Cos.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Cos.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -182,20 +182,22 @@ public class PaginaClient extends ControllerGeneral{
         }
     }
 
-    public void adaugareInCos(){
+    public void adaugareInCos() throws IOException {
         CitesteFisier();
 
         JSONObject obiect = new JSONObject();
         obiect.put("Username:", PaginaLogIn.getNume());
         obiect.put("Titlu:", lista.getSelectionModel().getSelectedItem());
 
-        try (FileWriter fisier = new FileWriter("src/main/resources/Cos.json")) {
+        try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\Cos.json")) {
             listaJson.add(obiect);
             fisier.write(listaJson.toJSONString());
             fisier.flush();
         } catch (IOException e) {
             throw new NuSaAdaugatCarte();
         }
+        String fisier = "\\Cos.json";
+        copiaza(fisier);
     }
 
     public void vizualizareCos(ActionEvent actionEvent) {
