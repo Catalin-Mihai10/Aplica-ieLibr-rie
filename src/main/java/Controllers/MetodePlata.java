@@ -133,7 +133,7 @@ public class MetodePlata extends ControllerGeneral{
                 }
                 aux.add(obj);
             }
-            try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\Carti.json")) {
+            try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\Carti.json")) {
                 fisier.write(aux.toJSONString());
                 fisier.flush();
             } catch (IOException e) {
