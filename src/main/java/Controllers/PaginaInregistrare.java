@@ -21,20 +21,25 @@ public class PaginaInregistrare extends ControllerGeneral{
     private TextField username;
     @FXML
     private PasswordField parola;
-
-    private File fis = new File("/AplicatieLibrarie/build/resources/main/user.json");
-    private String p = fis.getAbsolutePath();
     private JSONArray lista = new JSONArray();
 
+    public PaginaInregistrare() {
+    }
+
+    public String getUserPath(){
+        String path = new File(System.getProperty("user.dir")).getParent();
+        return path;
+    }
     public void back(ActionEvent actionEvent) {
         String s = "PaginaAutentificare.fxml";
         redirectioneazaPagina(actionEvent,s);
     }
 
-
     private int ExistaUtilizator(String username) {
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(p)) {
+        String path = new File(System.getProperty("user.dir")).getParent()+"\\resources\\main\\user.json";
+        System.out.println(path);
+        try (FileReader reader = new FileReader(getUserPath()+"\\resources\\main\\user.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -52,7 +57,7 @@ public class PaginaInregistrare extends ControllerGeneral{
 
     private void CitesteFisier(){
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(p)) {
+        try (FileReader reader = new FileReader(getUserPath()+"\\resources\\main\\user.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -69,7 +74,7 @@ public class PaginaInregistrare extends ControllerGeneral{
         }
     }
 
-    public void Inregistrare(ActionEvent actionEvent) throws UtilizatorulExistaDeja {
+    public void Inregistrare(ActionEvent actionEvent) throws UtilizatorulExistaDeja, IOException {
         Client c = new Client(username.getText(),parola.getText());
         if(ExistaUtilizator(c.getUsername()) == 1) {
             username.clear();
@@ -84,7 +89,7 @@ public class PaginaInregistrare extends ControllerGeneral{
             obiect.put("Username:", c.getUsername());
             obiect.put("Parola:", c.getEncodePassword());
 
-            try (FileWriter fisier = new FileWriter(p)) {
+            try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\user.json")) {
                 lista.add(obiect);
                 fisier.write(lista.toJSONString());
                 fisier.flush();
@@ -95,6 +100,37 @@ public class PaginaInregistrare extends ControllerGeneral{
             redirectioneazaPagina(actionEvent,s);
             String m = "Utilizatorul a fost\ncreat cu succes!";
             redirectionareEroare(m);
+        }
+        copiaza();
+    }
+
+    public void copiaza() throws IOException {
+        FileInputStream instream = null;
+        FileOutputStream outstream = null;
+
+        try{
+            File infile =new File(getUserPath()+"\\resources\\main\\user.json");
+            File outfile =new File("\\AplicatieLibrarie\\src\\main\\resources\\user.json");
+
+            instream = new FileInputStream(infile);
+            outstream = new FileOutputStream(outfile);
+
+            byte[] buffer = new byte[1024];
+
+            int length;
+
+            while ((length = instream.read(buffer)) > 0){
+                outstream.write(buffer, 0, length);
+            }
+
+            System.out.println("File copied successfully!!");
+
+        }catch(IOException ioe){
+            ioe.printStackTrace();
+        }
+        finally{
+            instream.close();
+            outstream.close();
         }
     }
 
