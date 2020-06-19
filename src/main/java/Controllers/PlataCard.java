@@ -62,7 +62,7 @@ public class PlataCard extends ControllerGeneral{
         }
     }
 
-    public static boolean isNumeric(String str) {
+    public boolean isNumeric(String str) {
         return str != null && str.matches("[-+]?\\d*\\.?\\d+");
     }
 

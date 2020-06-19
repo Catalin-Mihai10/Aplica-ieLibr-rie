@@ -31,7 +31,7 @@ public class PaginaLogIn extends ControllerGeneral {
 
     public void redirectionare(ActionEvent actionEvent) throws UsernameSauParolaGresite {
         nume = username.getText();
-        if(verificareUtilizator()==1) {
+        if(verificareUtilizator()==true) {
             String s = "PaginaClient.fxml";
             redirectioneazaPagina(actionEvent,s);
         }else {
@@ -43,7 +43,7 @@ public class PaginaLogIn extends ControllerGeneral {
             }
     }
 
-    public int  verificareUtilizator() {
+    public boolean  verificareUtilizator() {
         JSONParser parser = new JSONParser();
         Client c = new Client(username.getText(),parola.getText());
         try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\user.json")) {
@@ -54,14 +54,14 @@ public class PaginaLogIn extends ControllerGeneral {
                 JSONObject obiect = it.next();
 
                 if(obiect.get("Username:").toString().equals(c.getUsername()) &&
-                        obiect.get("Parola:").equals(c.getEncodePassword())) return 1;
+                        obiect.get("Parola:").equals(c.getEncodePassword())) return true;
             }
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return 0;
+        return false;
     }
 
     public static String getNume(){

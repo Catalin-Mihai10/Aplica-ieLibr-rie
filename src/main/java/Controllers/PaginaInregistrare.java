@@ -20,9 +20,10 @@ import java.util.Iterator;
 public class PaginaInregistrare extends ControllerGeneral{
 
     @FXML
-    private TextField username;
+     private TextField username;
     @FXML
     private PasswordField parola;
+
     private JSONArray lista = new JSONArray();
 
 
@@ -31,7 +32,7 @@ public class PaginaInregistrare extends ControllerGeneral{
         redirectioneazaPagina(actionEvent,s);
     }
 
-    private int ExistaUtilizator(String username) {
+    public int ExistaUtilizator(String username) {
         JSONParser parser = new JSONParser();
         try (FileReader reader = new FileReader(getUserPath()+"\\resources\\main\\user.json")) {
 
@@ -49,7 +50,7 @@ public class PaginaInregistrare extends ControllerGeneral{
         return 0;
     }
 
-    private void CitesteFisier(){
+    public void CitesteFisier(){
         JSONParser parser = new JSONParser();
         try (FileReader reader = new FileReader(getUserPath()+"\\resources\\main\\user.json")) {
 
