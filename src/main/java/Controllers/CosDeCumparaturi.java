@@ -4,13 +4,8 @@ import Exceptii.NuSaAdaugatCarte;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -22,7 +17,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.Iterator;
 
-public class CosDeCumparaturi {
+public class CosDeCumparaturi extends ControllerGeneral{
 
     @FXML
     private ListView<String> listaCumparaturi = new ListView<>();
@@ -31,34 +26,17 @@ public class CosDeCumparaturi {
     private JSONArray listaJson = new JSONArray();
 
     public void back(ActionEvent actionEvent) {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("PaginaClient.fxml"));
-            AnchorPane paginaA = (AnchorPane) loader.load();
-            Scene scene = new Scene(paginaA);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        String s = "PaginaClient.fxml";
+        redirectioneazaPagina(actionEvent,s);
     }
 
     public void confirma(ActionEvent actionEvent) {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("MetodePlata.fxml"));
-            AnchorPane paginaA = (AnchorPane) loader.load();
-            Scene scene = new Scene(paginaA);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
+        if(!listaCumparaturi.getItems().isEmpty()) {
+            String s = "MetodePlata.fxml";
+            redirectioneazaPagina(actionEvent,s);
+        }else{
+            String m = "Cosul este gol!";
+            redirectionareEroare(m);
         }
     }
 
@@ -67,10 +45,11 @@ public class CosDeCumparaturi {
         listaCumparaturi.setItems(observCos);
     }
 
-    public void stergeCarte(){
+    public void stergeCarte() throws IOException {
         listaJson.clear();
+        text.clear();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Cos.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Cos.json")) {
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
             while (it.hasNext()) {
@@ -88,7 +67,7 @@ public class CosDeCumparaturi {
                 }
             }
             listaJson.remove(obiect);
-            try (FileWriter fisier = new FileWriter("src/main/resources/Cos.json")) {
+            try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\Cos.json")) {
                 fisier.write(listaJson.toJSONString());
                 fisier.flush();
             } catch (IOException e) {
@@ -99,12 +78,14 @@ public class CosDeCumparaturi {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        String fisier = "\\Cos.json";
+        copiaza(fisier);
     }
 
-    public void afisareSuma(){
+    public void afisarePret(){
         String det = "";
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -121,4 +102,5 @@ public class CosDeCumparaturi {
             e.printStackTrace();
         }
     }
+
 }

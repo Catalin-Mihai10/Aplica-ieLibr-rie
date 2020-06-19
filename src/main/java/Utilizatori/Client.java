@@ -1,17 +1,21 @@
 package Utilizatori;
 
+import org.bouncycastle.util.encoders.Hex;
+
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class Client {
 
     private String username;
     private String password;
-
-    public Client() {
-
-    }
+    private String encodePassword;
 
     public Client(String username, String password) {
         this.username = username;
         this.password = password;
+        this.encodePassword = encodePassword(username,password);
     }
 
     public String getUsername() {
@@ -20,12 +24,30 @@ public class Client {
     public void setUsername(String username) {
         this.username = username;
     }
-    public String getPassword() {
-        return password;
+
+    public String getEncodePassword(){
+        return this.encodePassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    private static String encodePassword(String salt, String password) {
+        MessageDigest md = getMessageDigest();
+        md.update(salt.getBytes(StandardCharsets.UTF_8));
+
+        byte[] hashedPassword = md.digest(password.getBytes(StandardCharsets.UTF_8));
+
+        // This is the way a password should be encoded when checking the credentials
+        return new String(Hex.encode(hashedPassword));
+                 //to be able to save in JSON format
+    }
+
+    private static MessageDigest getMessageDigest() {
+        MessageDigest md;
+        try {
+            md = MessageDigest.getInstance("SHA-256");
+        } catch (NoSuchAlgorithmException e) {
+            throw new IllegalStateException("SHA-256 does not exist!");
+        }
+        return md;
     }
 
     @Override

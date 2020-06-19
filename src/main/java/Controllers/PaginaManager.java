@@ -17,11 +17,13 @@ import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Iterator;
 
-public class PaginaManager {
+public class PaginaManager extends ControllerGeneral{
     @FXML
-    private ListView<String> lista = new ListView<String>();
+    private ListView<String> lista = new ListView<>();
     @FXML
     private TextArea text;
     @FXML
@@ -29,99 +31,38 @@ public class PaginaManager {
 
     private ObservableList<String> observ = FXCollections.observableArrayList();
 
-
-    public void afisareSF(ActionEvent actionEvent){
+    public void afisareSF(){
         text.clear();
         lista.getItems().clear();
-        JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
-
-            JSONArray temp = (JSONArray) parser.parse(reader);
-            Iterator<JSONObject> it = temp.iterator();
-            while (it.hasNext()) {
-                JSONObject obiect = it.next();
-                if(obiect.get("Categorie:").toString().equals("SF")){
-                    observ.add(obiect.get("Titlu:").toString());
-                }
-            }
-            lista.setItems(observ);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        String s = "SF";
+        citireJson(lista,s,observ);
     }
 
-    public void afisareActiune(ActionEvent actionEvent){
+    public void afisareActiune(){
         text.clear();
         lista.getItems().clear();
-        JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
-
-            JSONArray temp = (JSONArray) parser.parse(reader);
-            Iterator<JSONObject> it = temp.iterator();
-            while (it.hasNext()) {
-                JSONObject obiect = it.next();
-                if(obiect.get("Categorie:").toString().equals("Actiune")){
-                    observ.add(obiect.get("Titlu:").toString());
-                }
-            }
-            lista.setItems(observ);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        String s = "Actiune";
+        citireJson(lista,s,observ);
     }
 
-    public void afisareDrama(ActionEvent actionEvent){
+    public void afisareDrama(){
         text.clear();
         lista.getItems().clear();
-        JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
-
-            JSONArray temp = (JSONArray) parser.parse(reader);
-            Iterator<JSONObject> it = temp.iterator();
-            while (it.hasNext()) {
-                JSONObject obiect = it.next();
-                if(obiect.get("Categorie:").toString().equals("Drama")){
-                    observ.add(obiect.get("Titlu:").toString());
-                }
-            }
-            lista.setItems(observ);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        String s = "Drama";
+        citireJson(lista,s,observ);
     }
 
-    public void afisareHorror(ActionEvent actionEvent){
+    public void afisareHorror(){
         text.clear();
         lista.getItems().clear();
-        JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
-
-            JSONArray temp = (JSONArray) parser.parse(reader);
-            Iterator<JSONObject> it = temp.iterator();
-            while (it.hasNext()) {
-                JSONObject obiect = it.next();
-                if(obiect.get("Categorie:").toString().equals("Horror")){
-                    observ.add(obiect.get("Titlu:").toString());
-                }
-            }
-            lista.setItems(observ);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        String s = "Horror";
+        citireJson(lista,s,observ);
     }
 
     public void afisareDetalii(){
         String det = "";
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -145,7 +86,7 @@ public class PaginaManager {
         text.clear();
         lista.getItems().clear();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -167,7 +108,7 @@ public class PaginaManager {
             text.clear();
             lista.getItems().clear();
             JSONParser parser = new JSONParser();
-            try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+            try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
 
                 JSONArray temp = (JSONArray) parser.parse(reader);
                 Iterator<JSONObject> it = temp.iterator();
@@ -186,5 +127,34 @@ public class PaginaManager {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void afisareAchizitii(){
+        text.clear();
+        lista.getItems().clear();
+        JSONParser parser = new JSONParser();
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Achizitii.json")) {
+            JSONArray temp = (JSONArray) parser.parse(reader);
+            Iterator<JSONObject> it = temp.iterator();
+            Calendar data1 = Calendar.getInstance();
+            data1.setTime(new Date());
+            String str = data1.get(Calendar.DATE)+"-"+data1.get(Calendar.MONTH)+"-"+data1.get(Calendar.YEAR);
+            while (it.hasNext()) {
+                JSONObject obiect = it.next();
+                if(obiect.get("Data:").toString().equals(str)){
+                    observ.add(obiect.get("Username:").toString()+": "+obiect.get("Titlu:").toString());
+                }
+            }
+            lista.setItems(observ);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void logOut(ActionEvent actionEvent) {
+        String s = "PaginaAutentificare.fxml";
+        redirectioneazaPagina(actionEvent,s);
     }
 }

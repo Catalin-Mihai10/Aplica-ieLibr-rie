@@ -30,10 +30,10 @@ import java.util.Comparator;
 import java.util.Iterator;
 
 
-public class PaginaClient extends CosDeCumparaturi{
+public class PaginaClient extends ControllerGeneral{
 
     @FXML
-    private ListView<String> lista = new ListView<String>();
+    private ListView<String> lista = new ListView<>();
     @FXML
     private TextArea text;
     @FXML
@@ -43,100 +43,40 @@ public class PaginaClient extends CosDeCumparaturi{
     private ObservableList<String> observ = FXCollections.observableArrayList();
     private static ObservableList<String> observCos = FXCollections.observableArrayList();
 
-    public void afisareSF(ActionEvent actionEvent){
+    public void afisareSF(){
         text.clear();
         lista.getItems().clear();
-        JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
-
-            JSONArray temp = (JSONArray) parser.parse(reader);
-            Iterator<JSONObject> it = temp.iterator();
-            while (it.hasNext()) {
-                JSONObject obiect = it.next();
-                if(obiect.get("Categorie:").toString().equals("SF")){
-                    observ.add(obiect.get("Titlu:").toString());
-                }
-            }
-            lista.setItems(observ);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        String s = "SF";
+        citireJson(lista,s,observ);
     }
 
-    public void afisareActiune(ActionEvent actionEvent){
+    public void afisareAventura(){
         text.clear();
         lista.getItems().clear();
-        JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
-
-            JSONArray temp = (JSONArray) parser.parse(reader);
-            Iterator<JSONObject> it = temp.iterator();
-            while (it.hasNext()) {
-                JSONObject obiect = it.next();
-                if(obiect.get("Categorie:").toString().equals("Actiune")){
-                    observ.add(obiect.get("Titlu:").toString());
-                }
-            }
-            lista.setItems(observ);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        String s = "Aventura";
+        citireJson(lista,s,observ);
     }
 
-    public void afisareDrama(ActionEvent actionEvent){
+    public void afisareRomance(){
         text.clear();
         lista.getItems().clear();
-        JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
-
-            JSONArray temp = (JSONArray) parser.parse(reader);
-            Iterator<JSONObject> it = temp.iterator();
-            while (it.hasNext()) {
-                JSONObject obiect = it.next();
-                if(obiect.get("Categorie:").toString().equals("Drama")){
-                    observ.add(obiect.get("Titlu:").toString());
-                }
-            }
-            lista.setItems(observ);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        String s = "Romance";
+        citireJson(lista,s,observ);
     }
 
-    public void afisareHorror(ActionEvent actionEvent){
+    public void afisareHorror(){
         text.clear();
         lista.getItems().clear();
-        JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
-
-            JSONArray temp = (JSONArray) parser.parse(reader);
-            Iterator<JSONObject> it = temp.iterator();
-            while (it.hasNext()) {
-                JSONObject obiect = it.next();
-                if(obiect.get("Categorie:").toString().equals("Horror")){
-                    observ.add(obiect.get("Titlu:").toString());
-                }
-            }
-            lista.setItems(observ);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        String s = "Horror";
+        citireJson(lista,s,observ);
     }
 
-    public void afisarePopulare(ActionEvent actionEvent) {
+    public void afisarePopulare() {
         text.clear();
         lista.getItems().clear();
         ArrayList<JSONObject> list = new ArrayList<>();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -173,7 +113,7 @@ public class PaginaClient extends CosDeCumparaturi{
     public void afisareDetalii(){
         String det = "";
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -199,14 +139,14 @@ public class PaginaClient extends CosDeCumparaturi{
             text.clear();
             lista.getItems().clear();
             JSONParser parser = new JSONParser();
-            try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+            try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
 
                 JSONArray temp = (JSONArray) parser.parse(reader);
                 Iterator<JSONObject> it = temp.iterator();
                 while (it.hasNext()) {
                     JSONObject obiect = it.next();
                     if(obiect.get("Titlu:").toString().equals(baraCautare.getText()) || obiect.get("Autor:").toString().equals(baraCautare.getText())
-                    || obiect.get("Categorie:").toString().equals(baraCautare.getText()) || obiect.get("Editura:").toString().equals(baraCautare.getText())){
+                            || obiect.get("Categorie:").toString().equals(baraCautare.getText()) || obiect.get("Editura:").toString().equals(baraCautare.getText())){
                         observ.add(obiect.get("Titlu:").toString());
                     }
                 }
@@ -224,7 +164,7 @@ public class PaginaClient extends CosDeCumparaturi{
         observCos.clear();
         listaJson.clear();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Cos.json")) {
+        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Cos.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -242,28 +182,29 @@ public class PaginaClient extends CosDeCumparaturi{
         }
     }
 
-
-    public void adaugareInCos(){
+    public void adaugareInCos() throws IOException {
         CitesteFisier();
 
         JSONObject obiect = new JSONObject();
         obiect.put("Username:", PaginaLogIn.getNume());
         obiect.put("Titlu:", lista.getSelectionModel().getSelectedItem());
 
-        try (FileWriter fisier = new FileWriter("src/main/resources/Cos.json")) {
+        try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\Cos.json")) {
             listaJson.add(obiect);
             fisier.write(listaJson.toJSONString());
             fisier.flush();
         } catch (IOException e) {
             throw new NuSaAdaugatCarte();
         }
+        String fisier = "\\Cos.json";
+        copiaza(fisier);
     }
 
     public void vizualizareCos(ActionEvent actionEvent) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("CosDeCumparaturi.fxml"));
-            AnchorPane paginaA = (AnchorPane) loader.load();
+            AnchorPane paginaA = loader.load();
             CosDeCumparaturi controller = loader.getController();
             CitesteFisier();
             controller.setListaCumparaturi(observCos);
@@ -276,6 +217,29 @@ public class PaginaClient extends CosDeCumparaturi{
         catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void vizualizareAchizitii(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getClassLoader().getResource("PaginaAchizitii.fxml"));
+            AnchorPane paginaA = loader.load();
+            PaginaAchizitii controller = loader.getController();
+            controller.setlistaAchizitii();
+            Scene scene = new Scene(paginaA);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void logOut(ActionEvent actionEvent) {
+        String s = "PaginaAutentificare.fxml";
+        redirectioneazaPagina(actionEvent,s);
     }
 
 }

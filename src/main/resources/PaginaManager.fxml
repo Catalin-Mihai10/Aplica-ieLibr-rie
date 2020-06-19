@@ -12,7 +12,8 @@
             <Button layoutY="161.0" mnemonicParsing="false" onAction="#afisareHorror" prefHeight="40.0" prefWidth="122.0" text="Horror" />
             <TextField fx:id="baraCautare" layoutY="302.0" onKeyReleased="#baraCautare" prefHeight="31.0" prefWidth="122.0" promptText="Cauta carte..." />
             <Button layoutY="201.0" mnemonicParsing="false" onAction="#afisareStoc" prefHeight="40.0" prefWidth="122.0" text="Stoc" />
-            <Button layoutY="241.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="122.0" text="Achizitii" />
+            <Button layoutY="241.0" mnemonicParsing="false" onAction="#afisareAchizitii" prefHeight="40.0" prefWidth="122.0" text="Achizitii" />
+            <Button layoutY="360.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="122.0" text="Log Out" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="117.0" prefHeight="400.0" prefWidth="484.0" style="-fx-background-color: #D70E0E;">

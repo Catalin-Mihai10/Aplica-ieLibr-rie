@@ -6,7 +6,7 @@
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="499.0" style="-fx-background-color: #a7678e;">
          <children>
-            <ListView fx:id="listaCumparaturi" layoutY="4.0" onMouseReleased="#afisareSuma" prefHeight="392.0" prefWidth="269.0" />
+            <ListView fx:id="listaCumparaturi" layoutY="4.0" onMouseReleased="#afisarePret" prefHeight="392.0" prefWidth="269.0" />
             <TextArea fx:id="text" editable="false" layoutX="272.0" layoutY="4.0" prefHeight="392.0" prefWidth="227.0" />
          </children>
       </AnchorPane>
