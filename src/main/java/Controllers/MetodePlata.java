@@ -23,11 +23,12 @@ import java.util.Random;
 public class MetodePlata extends ControllerGeneral{
 
     @FXML
-    private TextField text1;
+     TextField text1;
     @FXML
-    private TextField text2;
-    private JSONArray listaJson = new JSONArray();
-    private JSONArray listaAchizitii = new JSONArray();
+    TextField text2;
+    JSONArray listaJson = new JSONArray();
+    JSONArray listaAchizitii = new JSONArray();
+    JSONArray aux = new JSONArray();
 
     public void getFromCos(){
         listaJson.clear();
@@ -36,7 +37,7 @@ public class MetodePlata extends ControllerGeneral{
         Random r = new Random();
         int random = r.nextInt(7-1)+1;
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Cos.json")) {
+        try (Reader reader = new FileReader("src/main/resources/Cos.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -57,7 +58,7 @@ public class MetodePlata extends ControllerGeneral{
 
     public void Citeste(){
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Achizitii.json")) {
+        try (Reader reader = new FileReader("src/main/resources/Achizitii.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -110,9 +111,8 @@ public class MetodePlata extends ControllerGeneral{
     }
 
     public void rangSiStoc() throws IOException {
-        JSONArray aux = new JSONArray();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
+        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
             while (it.hasNext()) {
@@ -133,7 +133,7 @@ public class MetodePlata extends ControllerGeneral{
                 }
                 aux.add(obj);
             }
-            try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\Carti.json")) {
+            try (FileWriter fisier = new FileWriter("src/main/resources/Carti.json")) {
                 fisier.write(aux.toJSONString());
                 fisier.flush();
             } catch (IOException e) {
@@ -153,7 +153,7 @@ public class MetodePlata extends ControllerGeneral{
         Citeste();
         rangSiStoc();
         listaAchizitii.addAll(listaJson);
-        try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\Achizitii.json")) {
+        try (FileWriter fisier = new FileWriter("src/main/resources/Achizitii.json")) {
             fisier.write(listaAchizitii.toJSONString());
             fisier.flush();
         } catch (IOException e) {
@@ -166,7 +166,7 @@ public class MetodePlata extends ControllerGeneral{
     public void stergereCos() throws IOException {
         listaJson.clear();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Cos.json")) {
+        try (Reader reader = new FileReader("src/main/resources/Cos.json")) {
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
             while (it.hasNext()) {
@@ -175,7 +175,7 @@ public class MetodePlata extends ControllerGeneral{
                     listaJson.add(obj);
                 }
             }
-            try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\Cos.json")) {
+            try (FileWriter fisier = new FileWriter("src/main/resources/Cos.json")) {
                 fisier.write(listaJson.toJSONString());
                 fisier.flush();
             } catch (IOException e) {

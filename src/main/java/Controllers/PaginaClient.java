@@ -160,7 +160,7 @@ public class PaginaClient extends ControllerGeneral{
         }
     }
 
-    private void CitesteFisier(){
+    public void CitesteFisier(){
         observCos.clear();
         listaJson.clear();
         JSONParser parser = new JSONParser();

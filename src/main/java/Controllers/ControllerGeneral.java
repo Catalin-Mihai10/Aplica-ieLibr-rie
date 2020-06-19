@@ -52,7 +52,7 @@ public class ControllerGeneral {
 
     public ObservableList<String> citireJson(ListView<String> lista, String s, ObservableList<String> observ){
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
+        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -81,9 +81,9 @@ public class ControllerGeneral {
         FileOutputStream outstream = null;
 
         try{
-            File infile =new File(getUserPath()+"\\resources\\main"+fisierul);
+            File infile =new File("src/main/resources/user.json");
             File s = new File(getUserPath()).getParentFile();
-            File outfile =new File(s+"\\src\\main\\resources"+fisierul);
+            File outfile =new File("src/test/resources"+fisierul);
 
             instream = new FileInputStream(infile);
             outstream = new FileOutputStream(outfile);
