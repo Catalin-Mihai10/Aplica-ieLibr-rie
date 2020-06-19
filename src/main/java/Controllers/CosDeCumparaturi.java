@@ -20,7 +20,7 @@ import java.util.Iterator;
 public class CosDeCumparaturi extends ControllerGeneral{
 
     @FXML
-    private ListView<String> listaCumparaturi = new ListView<>();
+     ListView<String> listaCumparaturi = new ListView<>();
     @FXML
     private TextArea text;
     private JSONArray listaJson = new JSONArray();

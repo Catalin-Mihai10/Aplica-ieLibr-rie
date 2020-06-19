@@ -9,7 +9,7 @@ import javafx.scene.text.Text;
 public class Eroare {
 
     @FXML
-    private Text text;
+     Text text;
 
     public void setText(String t){
         text.setText(t);

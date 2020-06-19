@@ -33,15 +33,15 @@ import java.util.Iterator;
 public class PaginaClient extends ControllerGeneral{
 
     @FXML
-    private ListView<String> lista = new ListView<>();
+     ListView<String> lista = new ListView<>();
     @FXML
-    private TextArea text;
+     TextArea text;
     @FXML
-    private TextField baraCautare;
-    private JSONArray listaJson = new JSONArray();
+     TextField baraCautare;
+     JSONArray listaJson = new JSONArray();
 
-    private ObservableList<String> observ = FXCollections.observableArrayList();
-    private static ObservableList<String> observCos = FXCollections.observableArrayList();
+     ObservableList<String> observ = FXCollections.observableArrayList();
+     static ObservableList<String> observCos = FXCollections.observableArrayList();
 
     public void afisareSF(){
         text.clear();
@@ -76,7 +76,7 @@ public class PaginaClient extends ControllerGeneral{
         lista.getItems().clear();
         ArrayList<JSONObject> list = new ArrayList<>();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
+        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -164,7 +164,7 @@ public class PaginaClient extends ControllerGeneral{
         observCos.clear();
         listaJson.clear();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Cos.json")) {
+        try (Reader reader = new FileReader("src/main/resources/Cos.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();

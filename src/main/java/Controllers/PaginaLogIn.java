@@ -19,10 +19,10 @@ import java.util.Iterator;
 public class PaginaLogIn extends ControllerGeneral {
 
     @FXML
-    private TextField username;
+     TextField username;
     @FXML
-    private PasswordField parola;
-    protected static String nume;
+     PasswordField parola;
+     static String nume;
 
     public void back(ActionEvent actionEvent) {
         String s = "PaginaAutentificare.fxml";
@@ -46,7 +46,7 @@ public class PaginaLogIn extends ControllerGeneral {
     public boolean  verificareUtilizator() {
         JSONParser parser = new JSONParser();
         Client c = new Client(username.getText(),parola.getText());
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\user.json")) {
+        try (Reader reader = new FileReader("src/main/resources/user.json")) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
