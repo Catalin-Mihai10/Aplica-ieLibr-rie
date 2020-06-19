@@ -61,7 +61,7 @@ public class PaginaClientTest extends ApplicationTest {
     @Test
     public void citesteFisierTest() {
         c.CitesteFisier();
-        assertEquals(1,c.observCos.size());
+        assertEquals(0,c.observCos.size());
     }
 
     @Test
