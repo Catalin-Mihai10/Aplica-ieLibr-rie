@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CosDeCumparaturi">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="499.0" style="-fx-background-color: #a7678e;">
+         <children>
+            <ListView fx:id="listaCumparaturi" layoutY="4.0" onMouseReleased="#afisarePret" prefHeight="392.0" prefWidth="269.0" />
+            <TextArea fx:id="text" editable="false" layoutX="272.0" layoutY="4.0" prefHeight="392.0" prefWidth="227.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="499.0" prefHeight="400.0" prefWidth="111.0" style="-fx-background-color: #a0494a;">
+         <children>
+            <Button layoutX="9.0" layoutY="87.0" mnemonicParsing="false" onMouseReleased="#stergeCarte" prefHeight="40.0" prefWidth="102.0" text="Eliminare" />
+            <Button layoutX="9.0" mnemonicParsing="false" onAction="#back" prefHeight="40.0" prefWidth="102.0" text="Back" />
+            <Button layoutX="9.0" layoutY="346.0" mnemonicParsing="false" onAction="#confirma" prefHeight="40.0" prefWidth="102.0" text="Confirma&#10;comanda&#10;" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

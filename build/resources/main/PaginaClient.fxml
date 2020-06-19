@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PaginaClient">
+    <children>
+        <AnchorPane prefHeight="400.0" prefWidth="121.0" style="-fx-background-color: #21D70E;">
+            <children>
+                <Button layoutY="107.0" mnemonicParsing="false" onAction="#afisareRomance" prefHeight="40.0" prefWidth="122.0" text="Romance" />
+                <Button layoutY="67.0" mnemonicParsing="false" onAction="#afisareAventura" prefHeight="40.0" prefWidth="122.0" text="Aventura" />
+                <Button layoutY="147.0" mnemonicParsing="false" onAction="#afisareSF" prefHeight="40.0" prefWidth="122.0" text="SF" />
+                <Button layoutY="187.0" mnemonicParsing="false" onAction="#afisareHorror" prefHeight="40.0" prefWidth="122.0" text="Horror" />
+                <Button layoutY="227.0" mnemonicParsing="false" onAction="#afisarePopulare" prefHeight="40.0" prefWidth="122.0" text="Populare" />
+                <TextField fx:id="baraCautare" layoutY="6.0" onKeyReleased="#baraCautare" prefHeight="31.0" prefWidth="122.0" promptText="Cauta carte..." />
+            <Button layoutY="267.0" mnemonicParsing="false" onAction="#vizualizareCos" prefHeight="40.0" prefWidth="122.0" text="Cos de cumparaturi" />
+            <Button layoutY="307.0" mnemonicParsing="false" onAction="#vizualizareAchizitii" prefHeight="40.0" prefWidth="122.0" text="Achizitii" />
+            <Button layoutX="-1.0" layoutY="347.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="122.0" text="Log Out" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="117.0" prefHeight="400.0" prefWidth="484.0" style="-fx-background-color: #D70E0E;">
+            <children>
+                <ListView fx:id="lista" layoutX="8.0" layoutY="7.0" onMouseClicked="#afisareDetalii" prefHeight="386.0" prefWidth="232.0" />
+                <TextArea fx:id="text" editable="false" layoutX="242.0" layoutY="7.0" prefHeight="386.0" prefWidth="232.0" />
+            <Button layoutX="347.0" layoutY="346.0" mnemonicParsing="false" onAction="#adaugareInCos" prefHeight="40.0" prefWidth="122.0" text="Adauga in cos" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
