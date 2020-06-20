@@ -21,16 +21,16 @@ import java.util.Iterator;
 public class PaginaAchizitii extends ControllerGeneral{
 
     @FXML
-    private ListView<String> listaAchizitii = new ListView<>();
+    ListView<String> listaAchizitii = new ListView<>();
     @FXML
-    private TextArea text;
-    private ObservableList<String> observ = FXCollections.observableArrayList();
+    TextArea text;
+    ObservableList<String> observ = FXCollections.observableArrayList();
 
     public void setlistaAchizitii(){
         observ.clear();
         listaAchizitii.getItems().clear();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Achizitii.json")) {
+        try (Reader reader = new FileReader(getUserPath("Achizitii.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -59,7 +59,7 @@ public class PaginaAchizitii extends ControllerGeneral{
         Calendar data1 = Calendar.getInstance();
         data1.setTime(new Date());
         String[] zile;
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Achizitii.json")) {
+        try (Reader reader = new FileReader(getUserPath("Achizitii.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();

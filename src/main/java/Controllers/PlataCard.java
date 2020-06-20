@@ -24,15 +24,16 @@ import java.util.Random;
 
 public class PlataCard extends ControllerGeneral{
     @FXML
-    private TextField text1;
+    TextField text1;
     @FXML
-    private TextField text2;
+    TextField text2;
     @FXML
-    private TextField text3;
+    TextField text3;
     @FXML
-    private TextField text4;
-    private JSONArray listaJson = new JSONArray();
-    private JSONArray listaAchizitii = new JSONArray();
+    TextField text4;
+    JSONArray listaJson = new JSONArray();
+    JSONArray listaAchizitii = new JSONArray();
+    JSONArray aux = new JSONArray();
 
     public void back(ActionEvent actionEvent) {
         String s = "MetodePlata.fxml";
@@ -40,7 +41,7 @@ public class PlataCard extends ControllerGeneral{
     }
 
     public void finalizare(ActionEvent actionEvent) {
-        if(verificare() == 1) {
+        if(verificare() == true) {
             try {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getClassLoader().getResource("ComandaFinalizata.fxml"));
@@ -66,19 +67,19 @@ public class PlataCard extends ControllerGeneral{
         return str != null && str.matches("[-+]?\\d*\\.?\\d+");
     }
 
-    public int verificare(){
+    public boolean verificare(){
         Calendar data1 = Calendar.getInstance();
         data1.setTime(new Date());
         if(text1.getText().isEmpty() || text2.getText().isEmpty() || text3.getText().isEmpty()
-                || text4.getText().isEmpty()) return 0;
+                || text4.getText().isEmpty()) return false;
         if(isNumeric(text1.getText())&&isNumeric(text2.getText())&&isNumeric(text3.getText())&&isNumeric(text4.getText())) {
             if (text1.getText().length() != 16 || (Integer.parseInt(text3.getText()) < data1.get(Calendar.YEAR)))
-                return 0;
+                return false;
             else if ((Integer.parseInt(text3.getText()) == data1.get(Calendar.YEAR))) {
-                if (Integer.parseInt(text2.getText()) < data1.get(Calendar.MONTH)) return 0;
+                if (Integer.parseInt(text2.getText()) < data1.get(Calendar.MONTH)) return false;
             }
-        }else return 0;
-        return 1;
+        }else return false;
+        return true;
     }
 
     public void getFromCos(){
@@ -88,7 +89,7 @@ public class PlataCard extends ControllerGeneral{
         Random r = new Random();
         int random = r.nextInt(7-1)+1;
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Cos.json")) {
+        try (Reader reader = new FileReader(getUserPath("Cos.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -109,7 +110,7 @@ public class PlataCard extends ControllerGeneral{
 
     public void Citeste(){
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Achizitii.json")) {
+        try (Reader reader = new FileReader(getUserPath("Achizitii.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -125,9 +126,8 @@ public class PlataCard extends ControllerGeneral{
     }
 
     public void rangSiStoc() throws IOException {
-        JSONArray aux = new JSONArray();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath("Carti.json"))) {
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
             while (it.hasNext()) {
@@ -148,7 +148,7 @@ public class PlataCard extends ControllerGeneral{
                 }
                 aux.add(obj);
             }
-            try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\Carti.json")) {
+            try (FileWriter fisier = new FileWriter(getUserPath("Carti.json"))) {
                 fisier.write(aux.toJSONString());
                 fisier.flush();
             } catch (IOException e) {
@@ -159,7 +159,7 @@ public class PlataCard extends ControllerGeneral{
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
-        String fisier = "\\Carti.json";
+        String fisier = "Carti.json";
         copiaza(fisier);
     }
 
@@ -168,7 +168,7 @@ public class PlataCard extends ControllerGeneral{
         Citeste();
         rangSiStoc();
         listaAchizitii.addAll(listaJson);
-        try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\Achizitii.json")) {
+        try (FileWriter fisier = new FileWriter(getUserPath("Achizitii.json"))) {
             fisier.write(listaAchizitii.toJSONString());
             fisier.flush();
         } catch (IOException e) {
@@ -181,7 +181,7 @@ public class PlataCard extends ControllerGeneral{
     public void stergereCos() throws IOException {
         listaJson.clear();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Cos.json")) {
+        try (Reader reader = new FileReader(getUserPath("Cos.json"))) {
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
             while (it.hasNext()) {
@@ -190,7 +190,7 @@ public class PlataCard extends ControllerGeneral{
                     listaJson.add(obj);
                 }
             }
-            try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\Cos.json")) {
+            try (FileWriter fisier = new FileWriter(getUserPath("Cos.json"))) {
                 fisier.write(listaJson.toJSONString());
                 fisier.flush();
             } catch (IOException e) {
@@ -201,7 +201,7 @@ public class PlataCard extends ControllerGeneral{
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        String fisier = "\\Cos.json";
+        String fisier = "Cos.json";
         copiaza(fisier);
     }
 }

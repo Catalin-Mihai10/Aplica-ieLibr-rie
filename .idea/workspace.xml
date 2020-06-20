@@ -6,17 +6,33 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/PaginaInregistrare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PaginaInregistrare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/PaginaLogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PaginaLogIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Carti/Carte.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Controllers/PlataCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Controllers/PlataCard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Controllers/MetodePlataTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/Controllers/MetodePlataTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Controllers/PaginaAchizitiiTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/Controllers/PaginaAchizitiiTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Controllers/PaginaAutentificareManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/Controllers/PaginaAutentificareManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Controllers/PaginaInregistrareTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/Controllers/PaginaInregistrareTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Controllers/PlataCardTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/Controllers/PlataCardTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/AplicatieLibrarie-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/AplicatieLibrarie-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Carti/Carte.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/PlataCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PlataCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exceptii/DetaliiCardIncorecte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exceptii/DetaliiCardIncorecte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exceptii/UtilizatorulExistaDeja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exceptii/UtilizatorulExistaDeja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Controllers/MetodePlataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Controllers/MetodePlataTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Controllers/PaginaAchizitiiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Controllers/PaginaAchizitiiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Controllers/PaginaAutentificareManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Controllers/PaginaAutentificareManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Controllers/PaginaInregistrareTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Controllers/PaginaInregistrareTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Controllers/PaginaManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Controllers/PaginaManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Controllers/PlataCardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Controllers/PlataCardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +41,9 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="325" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -75,7 +94,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/AP-5" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -104,7 +123,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/build/jacoco/test.exec" />
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -115,19 +134,19 @@
       <recent name="Controllers" />
       <recent name="" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\AplicatieLibrarie\src\main\resources" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\AplicatieLibrarie\src\main\java\Controllers" />
       <recent name="D:\AplicatieLibrarie\src\main\java" />
       <recent name="D:\AplicatieLibrarie\src\main" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\AplicatieLibrarie\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.AplicatieLibrarie [build]">
@@ -150,22 +169,27 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ControllerGeneralTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AplicatieLibrarie.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Controllers" />
-      <option name="MAIN_CLASS_NAME" value="Controllers.ControllerGeneralTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="PaginaInregistrareTest.inregistrareTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;Controllers.PaginaInregistrareTest.inregistrareTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
     </configuration>
-    <configuration name="ControllerGeneralTest.citireJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControllerGeneralTest.citireJsontest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AplicatieLibrarie.test" />
       <extension name="coverage">
         <pattern>
@@ -175,13 +199,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="Controllers" />
       <option name="MAIN_CLASS_NAME" value="Controllers.ControllerGeneralTest" />
-      <option name="METHOD_NAME" value="citireJson" />
+      <option name="METHOD_NAME" value="citireJsontest1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaginaInregistrareTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MetodePlataTest.adaugaAchizitii" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AplicatieLibrarie.test" />
       <extension name="coverage">
         <pattern>
@@ -190,13 +214,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Controllers" />
-      <option name="MAIN_CLASS_NAME" value="Controllers.PaginaInregistrareTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="Controllers.MetodePlataTest" />
+      <option name="METHOD_NAME" value="adaugaAchizitii" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaginaInregistrareTest.citireUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MetodePlataTest.stergereCos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AplicatieLibrarie.test" />
       <extension name="coverage">
         <pattern>
@@ -205,8 +230,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Controllers" />
-      <option name="MAIN_CLASS_NAME" value="Controllers.PaginaInregistrareTest" />
-      <option name="METHOD_NAME" value="citireUserTest" />
+      <option name="MAIN_CLASS_NAME" value="Controllers.MetodePlataTest" />
+      <option name="METHOD_NAME" value="stergereCos" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -214,11 +239,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PaginaInregistrareTest.inregistrareTest" />
+        <item itemvalue="JUnit.ControllerGeneralTest.citireJsontest1" />
         <item itemvalue="Gradle.AplicatieLibrarie [build]" />
-        <item itemvalue="JUnit.PaginaInregistrareTest" />
-        <item itemvalue="JUnit.PaginaInregistrareTest.citireUserTest" />
-        <item itemvalue="JUnit.ControllerGeneralTest" />
-        <item itemvalue="JUnit.ControllerGeneralTest.citireJson" />
+        <item itemvalue="JUnit.MetodePlataTest.stergereCos" />
+        <item itemvalue="JUnit.MetodePlataTest.adaugaAchizitii" />
       </list>
     </recent_temporary>
   </component>
@@ -331,7 +356,21 @@
       <option name="project" value="LOCAL" />
       <updated>1592297542146</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="&quot;Feature-5 commit final&quot;">
+      <created>1592561360473</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1592561360473</updated>
+    </task>
+    <task id="LOCAL-00016" summary="&quot;Unversioned files2&quot;">
+      <created>1592575364369</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1592575364369</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -363,7 +402,9 @@
     <MESSAGE value="&quot;Copiere dinntr-un fisier in altul&quot;" />
     <MESSAGE value="&quot;Rezolvat erori + adaugat carti&quot;" />
     <MESSAGE value="&quot;Rezolvat erori la achizitionare&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Rezolvat erori la achizitionare&quot;" />
+    <MESSAGE value="&quot;Feature-5 commit final&quot;" />
+    <MESSAGE value="&quot;Unversioned files2&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Unversioned files2&quot;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -371,92 +412,101 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="23" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1587736644605" />
-    <state x="416" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589891892503">
+    <state x="100" y="100" width="1166" height="528" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1592573171509">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="416" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1589891892503" />
-    <state x="488" y="74" key="#com.intellij.ide.util.MemberChooser" timestamp="1592559963461">
+    <state x="100" y="100" width="1166" height="528" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1366.728@0.0.1366.728" timestamp="1592573171509" />
+    <state x="416" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592579403085">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="74" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592559963461" />
-    <state x="479" y="224" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589898762757">
+    <state x="416" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1592579403085" />
+    <state x="488" y="74" key="#com.intellij.ide.util.MemberChooser" timestamp="1592562769347">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="479" y="224" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1589898762757" />
-    <state x="413" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590060952458">
+    <state x="488" y="74" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592562769347" />
+    <state x="479" y="224" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1592653785005">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1590060952458" />
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1592297540574">
+    <state x="479" y="224" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1592653785005" />
+    <state x="413" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592566704343">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592297540574" />
-    <state x="379" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1591973687103" />
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1587737864401">
+    <state x="413" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1592566704343" />
+    <state x="379" y="0" key="CommitChangelistDialog2" timestamp="1592575362279">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592561358744" />
+    <state x="379" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1592575362279" />
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1592654390850">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587737864401" />
-    <state width="1350" height="116" key="GridCell.Tab.0.bottom" timestamp="1592561300505">
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592654390850" />
+    <state width="1306" height="116" key="GridCell.Tab.0.bottom" timestamp="1592654508159">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1350" height="116" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592561300505" />
-    <state width="1537" height="155" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592052232765" />
-    <state width="1350" height="116" key="GridCell.Tab.0.center" timestamp="1592561300505">
+    <state width="1306" height="116" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592654508159" />
+    <state width="1537" height="148" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592652372712" />
+    <state width="1306" height="116" key="GridCell.Tab.0.center" timestamp="1592654508158">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1350" height="116" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592561300505" />
-    <state width="1537" height="155" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592052232765" />
-    <state width="1350" height="116" key="GridCell.Tab.0.left" timestamp="1592561300505">
+    <state width="1306" height="116" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592654508158" />
+    <state width="1537" height="148" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592652372711" />
+    <state width="1306" height="116" key="GridCell.Tab.0.left" timestamp="1592654508156">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1350" height="116" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592561300505" />
-    <state width="1537" height="155" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592052232765" />
-    <state width="1350" height="116" key="GridCell.Tab.0.right" timestamp="1592561300505">
+    <state width="1306" height="116" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592654508156" />
+    <state width="1537" height="148" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592652372711" />
+    <state width="1306" height="116" key="GridCell.Tab.0.right" timestamp="1592654508158">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1350" height="116" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592561300505" />
-    <state width="1537" height="155" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592052232765" />
-    <state width="1306" height="219" key="GridCell.Tab.1.bottom" timestamp="1591456682889">
+    <state width="1306" height="116" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592654508158" />
+    <state width="1537" height="148" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592652372711" />
+    <state width="1350" height="227" key="GridCell.Tab.1.bottom" timestamp="1592637560073">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="219" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591456682889" />
+    <state width="1350" height="227" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592637560073" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590411064169" />
-    <state width="1306" height="219" key="GridCell.Tab.1.center" timestamp="1591456682889">
+    <state width="1350" height="227" key="GridCell.Tab.1.center" timestamp="1592637560073">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="219" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1591456682888" />
+    <state width="1350" height="227" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1592637560073" />
     <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1590411064169" />
-    <state width="1306" height="219" key="GridCell.Tab.1.left" timestamp="1591456682888">
+    <state width="1350" height="227" key="GridCell.Tab.1.left" timestamp="1592637560073">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="219" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1591456682888" />
+    <state width="1350" height="227" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1592637560073" />
     <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1590411064169" />
-    <state width="1306" height="219" key="GridCell.Tab.1.right" timestamp="1591456682889">
+    <state width="1350" height="227" key="GridCell.Tab.1.right" timestamp="1592637560073">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="219" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1591456682889" />
+    <state width="1350" height="227" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1592637560073" />
     <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1590411064169" />
+    <state x="481" y="128" key="MultipleFileMergeDialog" timestamp="1592575391769">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="481" y="128" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1592575391769" />
     <state x="465" y="76" key="RollbackChangesDialog" timestamp="1592058289088">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="465" y="76" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1592058289088" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1592558818842">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="183" y="0" key="SettingsEditor" timestamp="1592651031526">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592558818842" />
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1592297551110">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592650348504" />
+    <state x="183" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1592651031526" />
+    <state x="309" y="111" key="Vcs.Push.Dialog.v2" timestamp="1592574876215">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592297551110" />
-    <state x="309" y="111" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1591973716658" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592561390920" />
+    <state x="309" y="111" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1592574876215" />
     <state x="315" y="49" key="com.intellij.javaee.MapExternalResourceDialog" timestamp="1592494611980">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="315" y="49" key="com.intellij.javaee.MapExternalResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1592494611980" />
-    <state x="454" y="68" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1592559793542">
+    <state x="787" y="69" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1592573521503">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="454" y="68" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1592559793542" />
+    <state x="787" y="69" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1592573521503" />
     <state x="464" y="78" key="git4idea.branch.GitSmartOperationDialog" timestamp="1591956800194">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -465,6 +515,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="484" y="156" key="git4idea.merge.GitMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1589539362830" />
+    <state x="605" y="326" key="git4idea.rebase.GitUnstructuredEditor" timestamp="1592575395413">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="605" y="326" key="git4idea.rebase.GitUnstructuredEditor/0.0.1536.824@0.0.1536.824" timestamp="1592575395413" />
     <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1590068957159">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -473,5 +527,8 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1592210668121" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="D:\AplicatieLibrarie\build\jacoco\test.exec" NAME="test.exec" MODIFIED="1592654313007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

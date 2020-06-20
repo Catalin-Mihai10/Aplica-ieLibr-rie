@@ -17,9 +17,9 @@ import java.io.Reader;
 public class PaginaAutentificareManager extends ControllerGeneral{
 
     @FXML
-    private TextField username;
+    TextField username;
     @FXML
-    private PasswordField parola;
+    PasswordField parola;
 
     public void back(ActionEvent actionEvent) {
         String s = "PaginaAutentificare.fxml";
@@ -27,7 +27,7 @@ public class PaginaAutentificareManager extends ControllerGeneral{
     }
 
     public void redirectionare(ActionEvent actionEvent)throws UsernameSauParolaGresite {
-        if(verificareManager()==1) {
+        if(verificareManager()) {
             String s = "PaginaManager.fxml";
             redirectioneazaPagina(actionEvent,s);
         }else {
@@ -39,19 +39,19 @@ public class PaginaAutentificareManager extends ControllerGeneral{
             }
     }
 
-    public int verificareManager() {
+    public boolean verificareManager() {
         JSONParser parser = new JSONParser();
         Manager m = new Manager(username.getText(),parola.getText());
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\manager.json")) {
+        try (Reader reader = new FileReader(getUserPath("manager.json"))) {
 
             JSONObject obiect = (JSONObject) parser.parse(reader);
             if (obiect.get("Username:").toString().equals(m.getUsername()) && obiect.get("Parola:").toString().equals(m.getEncodedPassword())) {
-                return 1;
+                return true;
             }
 
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
-        return 0;
+        return false;
     }
 }

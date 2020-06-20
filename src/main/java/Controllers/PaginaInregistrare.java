@@ -20,11 +20,11 @@ import java.util.Iterator;
 public class PaginaInregistrare extends ControllerGeneral{
 
     @FXML
-     private TextField username;
+    TextField username;
     @FXML
-    private PasswordField parola;
+    PasswordField parola;
 
-    private JSONArray lista = new JSONArray();
+    JSONArray lista = new JSONArray();
 
 
     public void back(ActionEvent actionEvent) {
@@ -32,27 +32,27 @@ public class PaginaInregistrare extends ControllerGeneral{
         redirectioneazaPagina(actionEvent,s);
     }
 
-    public int ExistaUtilizator(String username) {
+    public boolean ExistaUtilizator(String username) {
         JSONParser parser = new JSONParser();
-        try (FileReader reader = new FileReader(getUserPath()+"\\resources\\main\\user.json")) {
+        try (FileReader reader = new FileReader(getUserPath("user.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
             while (it.hasNext()) {
                 JSONObject obj = it.next();
-                if(obj.get("Username:").toString().equals(username)) return 1;
+                if(obj.get("Username:").toString().equals(username)) return true;
             }
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return 0;
+        return false;
     }
 
     public void CitesteFisier(){
         JSONParser parser = new JSONParser();
-        try (FileReader reader = new FileReader(getUserPath()+"\\resources\\main\\user.json")) {
+        try (FileReader reader = new FileReader(getUserPath("user.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -71,7 +71,7 @@ public class PaginaInregistrare extends ControllerGeneral{
 
     public void Inregistrare(ActionEvent actionEvent) throws UtilizatorulExistaDeja, IOException {
         Client c = new Client(username.getText(),parola.getText());
-        if(ExistaUtilizator(c.getUsername()) == 1) {
+        if(ExistaUtilizator(c.getUsername()) == true) {
             username.clear();
             parola.clear();
             String m = "Un utilizator cu username-ul\nacesta exista deja!";
@@ -84,7 +84,7 @@ public class PaginaInregistrare extends ControllerGeneral{
             obiect.put("Username:", c.getUsername());
             obiect.put("Parola:", c.getEncodePassword());
 
-            try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\user.json")) {
+            try (FileWriter fisier = new FileWriter(getUserPath("user.json"))) {
                 lista.add(obiect);
                 fisier.write(lista.toJSONString());
                 fisier.flush();
@@ -96,7 +96,7 @@ public class PaginaInregistrare extends ControllerGeneral{
             String m = "Utilizatorul a fost\ncreat cu succes!";
             redirectionareEroare(m);
         }
-        String fis = "\\user.json";
+        String fis = "user.json";
         copiaza(fis);
     }
 
