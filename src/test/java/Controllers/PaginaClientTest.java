@@ -69,4 +69,5 @@ public class PaginaClientTest extends ApplicationTest {
         c.afisarePopulare();
         assertEquals(19,c.observ.size());
     }
+
 }

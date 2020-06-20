@@ -31,4 +31,11 @@ public class PaginaAchizitiiTest extends ApplicationTest {
         assertEquals(3,a.observ.size());
     }
 
+    @Test
+    public void afiseazaDetaliiTest(){
+        a.afisareDetalii();
+        assertEquals(null,a.listaAchizitii.getSelectionModel().getSelectedItem());
+        assertNotNull(a.text);
+    }
+
 }

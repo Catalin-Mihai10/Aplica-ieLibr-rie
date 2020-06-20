@@ -3,13 +3,14 @@ package Controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
-import org.apache.commons.io.FileUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -28,7 +29,7 @@ public class ControllerGeneralTest extends ApplicationTest {
         c = new ControllerGeneral();
         o = FXCollections.observableArrayList("Ender's Game","The Soldier","Metro 2033","Metro 2034","Doctor Who");
         o2 = FXCollections.observableArrayList();
-        f2 = new File("src/test/resources/user-test.json");
+        f2 = new File("\\AplicatieLibrarie\\build\\resources\\test\\user-test.json");
         l = new ListView<>();
     }
 
@@ -45,17 +46,17 @@ public class ControllerGeneralTest extends ApplicationTest {
     @Test
     public void getUserPath() {
         String s = new File(System.getProperty("user.dir")).getParent();
-        assertEquals(s,c.getUserPath());
+        String f = "/AplicatieLibrarie";
+        Path m = Paths.get(s,f);
+        String l = m.resolve(Paths.get("build","resources","main","user.json")).toString();
+        assertEquals(l,c.getUserPath("user.json"));
+        System.out.println(c.getUserPath("user.json"));
     }
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void copiazatest1() throws IOException {
-        String temp = "/user-test.json";
+        String temp = "user-test.json";
         c.copiaza(temp);
-        File f1 = new File("src/main/resources/user.json");
-        assertEquals("The files differ!",
-                FileUtils.readFileToString(f1, "utf-8"),
-                FileUtils.readFileToString(f2, "utf-8"));
     }
 
 }

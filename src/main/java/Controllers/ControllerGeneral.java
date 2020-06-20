@@ -14,6 +14,8 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Iterator;
 
 public class ControllerGeneral {
@@ -52,7 +54,7 @@ public class ControllerGeneral {
 
     public ObservableList<String> citireJson(ListView<String> lista, String s, ObservableList<String> observ){
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader("src/main/resources/Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath("Carti.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -71,9 +73,20 @@ public class ControllerGeneral {
         return observ;
     }
 
-    public String getUserPath(){
-        String path = new File(System.getProperty("user.dir")).getParent();
-        return path;
+    public String getUserPath(String str){
+        String s = new File(System.getProperty("user.dir")).getParentFile().toString();
+        Path p = Paths.get(s);
+        String l = null;
+        if(p.toString().equals("D:\\") || p.toString().equals("C:\\")){
+            String f = "AplicatieLibrarie";
+            Path m = Paths.get(s, f);
+            l = (m.resolve(Paths.get("build", "resources", "main", str)).toString());
+        }
+        else if(p.getFileName().toString().equals("build")){
+            Path m = Paths.get(s, "");
+            l = m.resolve(Paths.get("","resources","main",str)).toString();
+        }
+        return l;
     }
 
     public void copiaza(String fisierul) throws IOException {
@@ -81,9 +94,17 @@ public class ControllerGeneral {
         FileOutputStream outstream = null;
 
         try{
-            File infile =new File("src/main/resources/user.json");
-            File s = new File(getUserPath()).getParentFile();
-            File outfile =new File("src/test/resources"+fisierul);
+            File infile =new File(getUserPath(fisierul));
+            File outfile;
+            File s;
+            if(new File(System.getProperty("user.dir")).getParentFile().toString().equals("D:\\")
+            || new File(System.getProperty("user.dir")).getParentFile().getParentFile().toString().equals("C:\\")) {
+                s = new File(System.getProperty("user.dir"));
+                outfile = new File(s + "\\src\\main\\resources\\" + fisierul);
+            }else{
+                s = new File(System.getProperty("user.dir")).getParentFile().getParentFile();
+                outfile = new File(s + "\\src\\main\\resources\\" + fisierul);
+            }
 
             instream = new FileInputStream(infile);
             outstream = new FileOutputStream(outfile);

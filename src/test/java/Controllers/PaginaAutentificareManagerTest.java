@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class PaginaAutentificareManagerTest extends ApplicationTest {
@@ -24,5 +25,11 @@ public class PaginaAutentificareManagerTest extends ApplicationTest {
     @Test
     public void verificareManagerTest() {
         assertTrue(c.verificareManager());
+    }
+
+    @Test
+    public void verificareManagerTest1() {
+        c.username.setText("dsa");
+        assertFalse(c.verificareManager());
     }
 }

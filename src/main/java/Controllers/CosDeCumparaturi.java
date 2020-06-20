@@ -22,8 +22,8 @@ public class CosDeCumparaturi extends ControllerGeneral{
     @FXML
      ListView<String> listaCumparaturi = new ListView<>();
     @FXML
-    private TextArea text;
-    private JSONArray listaJson = new JSONArray();
+    TextArea text;
+    JSONArray listaJson = new JSONArray();
 
     public void back(ActionEvent actionEvent) {
         String s = "PaginaClient.fxml";
@@ -49,7 +49,7 @@ public class CosDeCumparaturi extends ControllerGeneral{
         listaJson.clear();
         text.clear();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Cos.json")) {
+        try (Reader reader = new FileReader(getUserPath("Cos.json"))) {
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
             while (it.hasNext()) {
@@ -67,7 +67,7 @@ public class CosDeCumparaturi extends ControllerGeneral{
                 }
             }
             listaJson.remove(obiect);
-            try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\Cos.json")) {
+            try (FileWriter fisier = new FileWriter(getUserPath("Cos.json"))) {
                 fisier.write(listaJson.toJSONString());
                 fisier.flush();
             } catch (IOException e) {
@@ -78,14 +78,14 @@ public class CosDeCumparaturi extends ControllerGeneral{
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        String fisier = "\\Cos.json";
+        String fisier = "Cos.json";
         copiaza(fisier);
     }
 
     public void afisarePret(){
         String det = "";
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath("Carti.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
