@@ -28,7 +28,7 @@ public class PaginaAchizitiiTest extends ApplicationTest {
         a.setlistaAchizitii();
         assertNotNull(a.listaAchizitii);
         assertNotNull(a.observ);
-        assertEquals(3,a.observ.size());
+        assertEquals(4,a.observ.size());
     }
 
     @Test

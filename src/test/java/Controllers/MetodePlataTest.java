@@ -37,7 +37,7 @@ public class MetodePlataTest extends ApplicationTest{
     public void citeste() {
         m.Citeste();
         assertNotNull(m.listaAchizitii);
-        assertEquals(8,m.listaAchizitii.size());
+        assertEquals(9,m.listaAchizitii.size());
     }
 
     @Test

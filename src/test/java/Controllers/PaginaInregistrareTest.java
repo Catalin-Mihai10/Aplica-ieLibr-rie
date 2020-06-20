@@ -1,5 +1,6 @@
 package Controllers;
 
+import Exceptii.UtilizatorulExistaDeja;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.json.simple.JSONArray;
@@ -46,5 +47,10 @@ public class PaginaInregistrareTest extends ApplicationTest{
         assertNotNull(p.lista);
     }
 
+    @Test(expected = UtilizatorulExistaDeja.class)
+    public void exsitaUtilizatortest4() throws UtilizatorulExistaDeja {
+        if(p.ExistaUtilizator(p.username.getText()) == true)
+            throw new UtilizatorulExistaDeja(p.username.getText());
+    }
 
 }

@@ -41,7 +41,7 @@ public class PlataCard extends ControllerGeneral{
     }
 
     public void finalizare(ActionEvent actionEvent) {
-        if(verificare() == 1) {
+        if(verificare() == true) {
             try {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getClassLoader().getResource("ComandaFinalizata.fxml"));
@@ -67,19 +67,19 @@ public class PlataCard extends ControllerGeneral{
         return str != null && str.matches("[-+]?\\d*\\.?\\d+");
     }
 
-    public int verificare(){
+    public boolean verificare(){
         Calendar data1 = Calendar.getInstance();
         data1.setTime(new Date());
         if(text1.getText().isEmpty() || text2.getText().isEmpty() || text3.getText().isEmpty()
-                || text4.getText().isEmpty()) return 0;
+                || text4.getText().isEmpty()) return false;
         if(isNumeric(text1.getText())&&isNumeric(text2.getText())&&isNumeric(text3.getText())&&isNumeric(text4.getText())) {
             if (text1.getText().length() != 16 || (Integer.parseInt(text3.getText()) < data1.get(Calendar.YEAR)))
-                return 0;
+                return false;
             else if ((Integer.parseInt(text3.getText()) == data1.get(Calendar.YEAR))) {
-                if (Integer.parseInt(text2.getText()) < data1.get(Calendar.MONTH)) return 0;
+                if (Integer.parseInt(text2.getText()) < data1.get(Calendar.MONTH)) return false;
             }
-        }else return 0;
-        return 1;
+        }else return false;
+        return true;
     }
 
     public void getFromCos(){

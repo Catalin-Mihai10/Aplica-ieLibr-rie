@@ -1,5 +1,6 @@
 package Controllers;
 
+import Exceptii.UsernameSauParolaGresite;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.junit.Before;
@@ -31,5 +32,12 @@ public class PaginaAutentificareManagerTest extends ApplicationTest {
     public void verificareManagerTest1() {
         c.username.setText("dsa");
         assertFalse(c.verificareManager());
+    }
+
+    @Test(expected = UsernameSauParolaGresite.class)
+    public void verificareManagerTest2() throws UsernameSauParolaGresite {
+        c.username.setText("dsa");
+        if(c.verificareManager() == false)
+            throw new UsernameSauParolaGresite();
     }
 }

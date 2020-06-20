@@ -1,5 +1,6 @@
 package Controllers;
 
+import Exceptii.DetaliiCardIncorecte;
 import javafx.scene.control.TextField;
 import org.json.simple.JSONArray;
 import org.junit.Before;
@@ -38,7 +39,7 @@ public class PlataCardTest extends ApplicationTest {
     public void citeste() {
         m.Citeste();
         assertNotNull(m.listaAchizitii);
-        assertEquals(8,m.listaAchizitii.size());
+        assertEquals(9,m.listaAchizitii.size());
     }
 
     @Test
@@ -76,7 +77,7 @@ public class PlataCardTest extends ApplicationTest {
         m.text2.setText("");
         m.text3.setText("");
         m.text4.setText("");
-        assertEquals(0,m.verificare());
+        assertFalse(m.verificare());
     }
 
     @Test
@@ -85,7 +86,7 @@ public class PlataCardTest extends ApplicationTest {
         m.text2.setText("1");
         m.text3.setText("2019");
         m.text4.setText("327163");
-        assertEquals(0,m.verificare());
+        assertFalse(m.verificare());
     }
 
     @Test
@@ -94,9 +95,17 @@ public class PlataCardTest extends ApplicationTest {
         m.text2.setText("1");
         m.text3.setText("2022");
         m.text4.setText("327163");
-        assertEquals(1,m.verificare());
+        assertTrue(m.verificare());
     }
 
-
+    @Test(expected = DetaliiCardIncorecte.class)
+    public void verificaretest4() {
+        m.text1.setText("1234567891234567");
+        m.text2.setText("1");
+        m.text3.setText("2019");
+        m.text4.setText("327163");
+       if(m.verificare() == false)
+           throw new DetaliiCardIncorecte();
+    }
     
 }
