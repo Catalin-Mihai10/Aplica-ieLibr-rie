@@ -6,8 +6,8 @@
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="121.0" style="-fx-background-color: #21D70E;">
          <children>
-            <Button layoutY="81.0" mnemonicParsing="false" onAction="#afisareDrama" prefHeight="40.0" prefWidth="122.0" text="Drama" />
-            <Button layoutY="41.0" mnemonicParsing="false" onAction="#afisareActiune" prefHeight="40.0" prefWidth="122.0" text="Actiune" />
+            <Button layoutY="81.0" mnemonicParsing="false" onAction="#afisareRomance" prefHeight="40.0" prefWidth="122.0" text="Romance" />
+            <Button layoutY="41.0" mnemonicParsing="false" onAction="#afisareAventura" prefHeight="40.0" prefWidth="122.0" text="Aventura" />
             <Button layoutY="121.0" mnemonicParsing="false" onAction="#afisareSF" prefHeight="40.0" prefWidth="122.0" text="SF" />
             <Button layoutY="161.0" mnemonicParsing="false" onAction="#afisareHorror" prefHeight="40.0" prefWidth="122.0" text="Horror" />
             <TextField fx:id="baraCautare" layoutY="302.0" onKeyReleased="#baraCautare" prefHeight="31.0" prefWidth="122.0" promptText="Cauta carte..." />

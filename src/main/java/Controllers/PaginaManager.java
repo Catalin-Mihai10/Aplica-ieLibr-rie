@@ -38,17 +38,17 @@ public class PaginaManager extends ControllerGeneral{
         citireJson(lista,s,observ);
     }
 
-    public void afisareActiune(){
+    public void afisareAventura(){
         text.clear();
         lista.getItems().clear();
-        String s = "Actiune";
+        String s = "Aventura";
         citireJson(lista,s,observ);
     }
 
-    public void afisareDrama(){
+    public void afisareRomance(){
         text.clear();
         lista.getItems().clear();
-        String s = "Drama";
+        String s = "Romance";
         citireJson(lista,s,observ);
     }
 
