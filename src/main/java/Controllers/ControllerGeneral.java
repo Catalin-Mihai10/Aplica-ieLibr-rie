@@ -76,7 +76,7 @@ public class ControllerGeneral {
     public String getUserPath(String str){
         String s = new File(System.getProperty("user.dir")).getParentFile().toString();
         Path p = Paths.get(s);
-        String l = null;
+        String l;
         if(p.toString().equals("D:\\") || p.toString().equals("C:\\")){
             String f = "AplicatieLibrarie";
             Path m = Paths.get(s, f);
@@ -85,6 +85,11 @@ public class ControllerGeneral {
         else if(p.getFileName().toString().equals("build")){
             Path m = Paths.get(s, "");
             l = m.resolve(Paths.get("","resources","main",str)).toString();
+        }
+        else{
+            String f = "AplicatieLibrarie";
+            Path m = Paths.get(s, f);
+            l = (m.resolve(Paths.get("build", "resources", "main", str)).toString());
         }
         return l;
     }
@@ -97,12 +102,18 @@ public class ControllerGeneral {
             File infile =new File(getUserPath(fisierul));
             File outfile;
             File s;
+            Path p = Paths.get(new File(System.getProperty("user.dir")).getParentFile().toString());
             if(new File(System.getProperty("user.dir")).getParentFile().toString().equals("D:\\")
-            || new File(System.getProperty("user.dir")).getParentFile().getParentFile().toString().equals("C:\\")) {
+            || new File(System.getProperty("user.dir")).getParentFile().toString().equals("C:\\")) {
                 s = new File(System.getProperty("user.dir"));
                 outfile = new File(s + "\\src\\main\\resources\\" + fisierul);
-            }else{
+            }else if(p.getParent().getFileName().toString().equals("AplicatieLibrarie")){
                 s = new File(System.getProperty("user.dir")).getParentFile().getParentFile();
+                outfile = new File(s + "\\src\\main\\resources\\" + fisierul);
+                System.out.println(p.toString());
+            }
+            else{
+                s = new File(System.getProperty("user.dir"));
                 outfile = new File(s + "\\src\\main\\resources\\" + fisierul);
             }
 
