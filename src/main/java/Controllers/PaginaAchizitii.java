@@ -30,7 +30,7 @@ public class PaginaAchizitii extends ControllerGeneral{
         observ.clear();
         listaAchizitii.getItems().clear();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Achizitii.json")) {
+        try (Reader reader = new FileReader(getUserPath("Achizitii.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -59,7 +59,7 @@ public class PaginaAchizitii extends ControllerGeneral{
         Calendar data1 = Calendar.getInstance();
         data1.setTime(new Date());
         String[] zile;
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Achizitii.json")) {
+        try (Reader reader = new FileReader(getUserPath("Achizitii.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();

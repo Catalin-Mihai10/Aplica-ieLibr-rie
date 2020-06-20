@@ -76,7 +76,7 @@ public class PaginaClient extends ControllerGeneral{
         lista.getItems().clear();
         ArrayList<JSONObject> list = new ArrayList<>();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath("Carti.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -113,7 +113,7 @@ public class PaginaClient extends ControllerGeneral{
     public void afisareDetalii(){
         String det = "";
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath("Carti.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -139,7 +139,7 @@ public class PaginaClient extends ControllerGeneral{
             text.clear();
             lista.getItems().clear();
             JSONParser parser = new JSONParser();
-            try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
+            try (Reader reader = new FileReader(getUserPath("Carti.json"))) {
 
                 JSONArray temp = (JSONArray) parser.parse(reader);
                 Iterator<JSONObject> it = temp.iterator();
@@ -164,7 +164,7 @@ public class PaginaClient extends ControllerGeneral{
         observCos.clear();
         listaJson.clear();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Cos.json")) {
+        try (Reader reader = new FileReader(getUserPath("Cos.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -189,14 +189,14 @@ public class PaginaClient extends ControllerGeneral{
         obiect.put("Username:", PaginaLogIn.getNume());
         obiect.put("Titlu:", lista.getSelectionModel().getSelectedItem());
 
-        try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\Cos.json")) {
+        try (FileWriter fisier = new FileWriter(getUserPath("Cos.json"))) {
             listaJson.add(obiect);
             fisier.write(listaJson.toJSONString());
             fisier.flush();
         } catch (IOException e) {
             throw new NuSaAdaugatCarte();
         }
-        String fisier = "\\Cos.json";
+        String fisier = "Cos.json";
         copiaza(fisier);
     }
 

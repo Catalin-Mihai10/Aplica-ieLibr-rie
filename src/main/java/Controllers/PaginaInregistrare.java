@@ -34,7 +34,7 @@ public class PaginaInregistrare extends ControllerGeneral{
 
     public int ExistaUtilizator(String username) {
         JSONParser parser = new JSONParser();
-        try (FileReader reader = new FileReader(getUserPath()+"\\resources\\main\\user.json")) {
+        try (FileReader reader = new FileReader(getUserPath("user.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -52,7 +52,7 @@ public class PaginaInregistrare extends ControllerGeneral{
 
     public void CitesteFisier(){
         JSONParser parser = new JSONParser();
-        try (FileReader reader = new FileReader(getUserPath()+"\\resources\\main\\user.json")) {
+        try (FileReader reader = new FileReader(getUserPath("user.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -84,7 +84,7 @@ public class PaginaInregistrare extends ControllerGeneral{
             obiect.put("Username:", c.getUsername());
             obiect.put("Parola:", c.getEncodePassword());
 
-            try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\user.json")) {
+            try (FileWriter fisier = new FileWriter(getUserPath("user.json"))) {
                 lista.add(obiect);
                 fisier.write(lista.toJSONString());
                 fisier.flush();
@@ -96,7 +96,7 @@ public class PaginaInregistrare extends ControllerGeneral{
             String m = "Utilizatorul a fost\ncreat cu succes!";
             redirectionareEroare(m);
         }
-        String fis = "\\user.json";
+        String fis = "user.json";
         copiaza(fis);
     }
 

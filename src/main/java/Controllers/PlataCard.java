@@ -88,7 +88,7 @@ public class PlataCard extends ControllerGeneral{
         Random r = new Random();
         int random = r.nextInt(7-1)+1;
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Cos.json")) {
+        try (Reader reader = new FileReader(getUserPath("Cos.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -109,7 +109,7 @@ public class PlataCard extends ControllerGeneral{
 
     public void Citeste(){
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Achizitii.json")) {
+        try (Reader reader = new FileReader(getUserPath("Achizitii.json"))) {
 
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
@@ -127,7 +127,7 @@ public class PlataCard extends ControllerGeneral{
     public void rangSiStoc() throws IOException {
         JSONArray aux = new JSONArray();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Carti.json")) {
+        try (Reader reader = new FileReader(getUserPath("Carti.json"))) {
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
             while (it.hasNext()) {
@@ -148,7 +148,7 @@ public class PlataCard extends ControllerGeneral{
                 }
                 aux.add(obj);
             }
-            try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\Carti.json")) {
+            try (FileWriter fisier = new FileWriter(getUserPath("Carti.json"))) {
                 fisier.write(aux.toJSONString());
                 fisier.flush();
             } catch (IOException e) {
@@ -159,7 +159,7 @@ public class PlataCard extends ControllerGeneral{
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
-        String fisier = "\\Carti.json";
+        String fisier = "Carti.json";
         copiaza(fisier);
     }
 
@@ -168,20 +168,20 @@ public class PlataCard extends ControllerGeneral{
         Citeste();
         rangSiStoc();
         listaAchizitii.addAll(listaJson);
-        try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\Achizitii.json")) {
+        try (FileWriter fisier = new FileWriter(getUserPath("Achizitii.json"))) {
             fisier.write(listaAchizitii.toJSONString());
             fisier.flush();
         } catch (IOException e) {
             throw new NuSaAdaugatCarte();
         }
-        String fisier = "\\Achizitii.json";
+        String fisier = "Achizitii.json";
         copiaza(fisier);
     }
 
     public void stergereCos() throws IOException {
         listaJson.clear();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(getUserPath()+"\\resources\\main\\Cos.json")) {
+        try (Reader reader = new FileReader(getUserPath("Cos.json"))) {
             JSONArray temp = (JSONArray) parser.parse(reader);
             Iterator<JSONObject> it = temp.iterator();
             while (it.hasNext()) {
@@ -190,7 +190,7 @@ public class PlataCard extends ControllerGeneral{
                     listaJson.add(obj);
                 }
             }
-            try (FileWriter fisier = new FileWriter(getUserPath()+"\\resources\\main\\Cos.json")) {
+            try (FileWriter fisier = new FileWriter(getUserPath("Cos.json"))) {
                 fisier.write(listaJson.toJSONString());
                 fisier.flush();
             } catch (IOException e) {
@@ -201,7 +201,7 @@ public class PlataCard extends ControllerGeneral{
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        String fisier = "\\Cos.json";
+        String fisier = "Cos.json";
         copiaza(fisier);
     }
 }
