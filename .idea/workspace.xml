@@ -13,26 +13,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Carti/Carte.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Controllers/PlataCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Controllers/PlataCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Controllers/MetodePlataTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/Controllers/MetodePlataTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Controllers/PaginaAchizitiiTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/Controllers/PaginaAchizitiiTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Controllers/PaginaAutentificareManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/Controllers/PaginaAutentificareManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Controllers/ControllerGeneral.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Controllers/ControllerGeneral.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Exceptii/DetaliiCardIncorecte.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Exceptii/DetaliiCardIncorecte.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Exceptii/UtilizatorulExistaDeja.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Exceptii/UtilizatorulExistaDeja.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/Controllers/PaginaInregistrareTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/Controllers/PaginaInregistrareTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Controllers/PlataCardTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/Controllers/PlataCardTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/AplicatieLibrarie-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/AplicatieLibrarie-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/user.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/user.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Carti/Carte.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/PlataCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PlataCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exceptii/DetaliiCardIncorecte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exceptii/DetaliiCardIncorecte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exceptii/UtilizatorulExistaDeja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exceptii/UtilizatorulExistaDeja.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Controllers/MetodePlataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Controllers/MetodePlataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Controllers/PaginaAchizitiiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Controllers/PaginaAchizitiiTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Controllers/PaginaAutentificareManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Controllers/PaginaAutentificareManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Controllers/PaginaInregistrareTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Controllers/PaginaInregistrareTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Controllers/PaginaManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Controllers/PaginaManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Controllers/PlataCardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Controllers/PlataCardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerGeneral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerGeneral.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -441,25 +429,25 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592654390850" />
-    <state width="1306" height="116" key="GridCell.Tab.0.bottom" timestamp="1592654508159">
+    <state width="1350" height="116" key="GridCell.Tab.0.bottom" timestamp="1592725995802">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="116" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592654508159" />
+    <state width="1350" height="116" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592725995802" />
     <state width="1537" height="148" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592652372712" />
-    <state width="1306" height="116" key="GridCell.Tab.0.center" timestamp="1592654508158">
+    <state width="1350" height="116" key="GridCell.Tab.0.center" timestamp="1592725995802">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="116" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592654508158" />
+    <state width="1350" height="116" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592725995802" />
     <state width="1537" height="148" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592652372711" />
-    <state width="1306" height="116" key="GridCell.Tab.0.left" timestamp="1592654508156">
+    <state width="1350" height="116" key="GridCell.Tab.0.left" timestamp="1592725995801">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="116" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592654508156" />
+    <state width="1350" height="116" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592725995801" />
     <state width="1537" height="148" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592652372711" />
-    <state width="1306" height="116" key="GridCell.Tab.0.right" timestamp="1592654508158">
+    <state width="1350" height="116" key="GridCell.Tab.0.right" timestamp="1592725995802">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="116" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592654508158" />
+    <state width="1350" height="116" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592725995802" />
     <state width="1537" height="148" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592652372711" />
     <state width="1350" height="227" key="GridCell.Tab.1.bottom" timestamp="1592637560073">
       <screen x="0" y="0" width="1366" height="728" />
