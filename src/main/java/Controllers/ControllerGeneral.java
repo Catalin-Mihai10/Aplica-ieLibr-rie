@@ -77,7 +77,7 @@ public class ControllerGeneral {
         String s = new File(System.getProperty("user.dir")).getParentFile().toString();
         Path p = Paths.get(s);
         String l;
-        if(p.toString().equals("D:\\") || p.toString().equals("C:\\")){
+        if(p.getParent() == null){
             String f = "AplicatieLibrarie";
             Path m = Paths.get(s, f);
             l = (m.resolve(Paths.get("build", "resources", "main", str)).toString());
@@ -103,8 +103,7 @@ public class ControllerGeneral {
             File outfile;
             File s;
             Path p = Paths.get(new File(System.getProperty("user.dir")).getParentFile().toString());
-            if(new File(System.getProperty("user.dir")).getParentFile().toString().equals("D:\\")
-            || new File(System.getProperty("user.dir")).getParentFile().toString().equals("C:\\")) {
+            if(new File(System.getProperty("user.dir")).getParentFile().getParent() == null) {
                 s = new File(System.getProperty("user.dir"));
                 outfile = new File(s + "\\src\\main\\resources\\" + fisierul);
             }else if(p.getParent().getFileName().toString().equals("AplicatieLibrarie")){
